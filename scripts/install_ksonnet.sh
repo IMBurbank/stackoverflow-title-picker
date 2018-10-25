@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ./dev.env.sh
+. $(dirname $0)/dev.env.sh
 
 # Create ~/bin if it doesn't exist
 if [ ! -e "${HOME}/bin" ]; then

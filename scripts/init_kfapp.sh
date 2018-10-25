@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ./dev.env.sh
+. $(dirname $0)/dev.env.sh
 
 # Change to project directory
 cd $HOME/${PROJ_NAME}/

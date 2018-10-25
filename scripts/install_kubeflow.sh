@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ./dev.env.sh
+. $(dirname $0)/dev.env.sh
 
 # Create and enter kubeflow directory
 mkdir ${KUBEFLOW_SRC}

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ./dev.env.sh
+. $(dirname $0)/dev.env.sh
 
 # Choose & set compute zone
 gcloud config set compute/zone ${ZONE}
