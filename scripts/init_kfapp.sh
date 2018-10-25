@@ -12,5 +12,7 @@ ${KUBEFLOW_SRC}/scripts/kfctl.sh init ${KFAPP} --platform gcp
 cd ${KFAPP}
 
 # Generate and apply kubeflow components to cluster
-${KUBEFLOW_SRC}/scripts/kfctl.sh generate k8s
-${KUBEFLOW_SRC}/scripts/kfctl.sh apply k8s
+${KUBEFLOW_REPO}/scripts/kfctl.sh generate platform
+${KUBEFLOW_REPO}/scripts/kfctl.sh apply platform
+${KUBEFLOW_REPO}/scripts/kfctl.sh generate k8s
+${KUBEFLOW_REPO}/scripts/kfctl.sh apply k8s
