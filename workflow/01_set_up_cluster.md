@@ -5,8 +5,10 @@ Create project
 ### Set Project Variables
 
 ```bash
-export PROJ_NAME=stackoverflow-title-picker
+export PROJECT=$(gcloud config get-value project)
 ```
+
+## Start GKE Cluster
 
 ### Start Cluster
 
@@ -14,26 +16,46 @@ export PROJ_NAME=stackoverflow-title-picker
 # (Optional) list compute zones
 gcloud compute zones list
 
-# Choose & set compute zone
+# Choose & set compute zone-
 export ZONE=us-central1-a
 gcloud config set compute/zone ${ZONE}
 
-# Set cluster variables and create
+# Set cluster variables
 export KNAME=kubeflow-dev
 KMACHINE=n1-standard-2
+
+# Create
 gcloud container clusters create ${KNAME} --zone ${ZONE} --machine-type ${KMACHINE}
 
-# Connect our local environment to the cluster 
-# so we can interact with it locally using the Kubernetes CLI tool, kubectl:
+# Connect local environment with cluster to interact with it using kubectl
 gcloud container clusters get-credentials ${KNAME} --zone ${ZONE}
 
 # Create cluster-admin role for user on cluster
 kubectl create clusterrolebinding default-admin \
       --clusterrole=cluster-admin --user=$(gcloud config get-value account)
       
-# Install NVIDIA drivers on Container-Optimized OS:
+# Install NVIDIA drivers on Container-Optimized OS (for GPU)
 kubectl create -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/k8s-1.9/daemonset.yaml
 ```
+
+### Create oauth client credentials
+
+Set up per [kubeflow instructions](https://www.kubeflow.org/docs/started/getting-started-gke/)
+
+- Configure the oauth [consent](https://console.cloud.google.com/apis/credentials/consent)
+
+- Configure oauth [credentials](https://console.cloud.google.com/apis/credentials)
+
+- Create (make note of client ID and client secret)
+
+- Export client ID and client secret
+
+```bash
+export CLIENT_ID=<CLIENT_ID from OAuth page>
+export CLIENT_SECRET=<CLIENT_SECRET from OAuth page>
+```
+
+## Deploy Kubeflow to Cluster
 
 ### Prepare Local Cloud Environment
 
@@ -41,11 +63,14 @@ kubectl create -f https://raw.githubusercontent.com/GoogleCloudPlatform/containe
 # Add github token to shell environmen
 export GITHUB_TOKEN=<your_token_here>
 
+
 # Create `bin` directory in $HOME
 mkdir -p ${HOME}/bin
 export PATH=$PATH:${HOME}/bin/
 echo "export PATH=$PATH:${HOME}/bin/" >> .bashrc
 ```
+
+Enable [IAM API](https://console.developers.google.com/apis/api/iam.googleapis.com/overview)
 
 ### Install Ksonnet
 
@@ -79,8 +104,13 @@ curl https://raw.githubusercontent.com/kubeflow/kubeflow/${KUBEFLOW_TAG}/scripts
 Run the following commands to setup and deploy Kubeflow
 
 ```bash
-${KUBEFLOW_SRC}/scripts/kfctl.sh init ${KFAPP} --platform gcp
+# Create and change to KFAPP
+${KUBEFLOW_SRC}/scripts/kfctl.sh init ${KFAPP} --platform gcp --project ${PROJECT}
 cd ${KFAPP}
-${KUBEFLOW_SRC}/scripts/kfctl.sh generate k8s
+
+# Generate and apply kubeflow components to cluster
+${KUBEFLOW_SRC}/scripts/kfctl.sh generate platform
+${KUBEFLOW_SRC}/scripts/kfctl.sh apply platform
+${KUBEFLOW_SRC}/scripts/kfctl.sh generate 
 ${KUBEFLOW_SRC}/scripts/kfctl.sh apply k8s
 ```

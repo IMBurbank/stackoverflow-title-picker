@@ -1,4 +1,4 @@
-export PROJ_NAME=stackoverflow-title-picker
+export PROJECT=stackoverflow-title-picker
 export ZONE=us-central1-a
 export KNAME=kubeflow-dev
 export KMACHINE=n1-standard-2
