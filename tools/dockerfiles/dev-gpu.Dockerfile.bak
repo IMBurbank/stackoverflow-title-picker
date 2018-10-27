@@ -1,0 +1,26 @@
+﻿FROM imburbank/tensorflow:latest-gpu
+
+RUN pip3 install --upgrade \
+        annoy \
+        ipdb \
+        jupyter \
+        ktext \
+        matplotlib \
+        nltk \
+        pandas \
+        seaborn \
+        sklearn
+
+RUN mkdir /my-devel && chmod a+rwx /my-devel
+RUN mkdir /.local && chmod a+rwx /.local
+COPY dev-gpu-entry.sh /entry.sh
+
+WORKDIR /my-devel
+EXPOSE 8888
+
+ENTRYPOINT ["/entry.sh"]
+CMD ["bash", "-c", "jupyter notebook \
+        --notebook-dir=/my-devel \
+        --ip 0.0.0.0 \
+        --no-browser \
+        --allow-root"]
