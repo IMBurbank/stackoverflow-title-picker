@@ -97,6 +97,7 @@ RUN curl -o /etc/bash.bashrc \
 
 RUN pip3 install --upgrade \
         annoy \
+        bs4 \
         ipdb \
         jupyter \
         ktext \
