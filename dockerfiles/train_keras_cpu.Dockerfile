@@ -52,4 +52,3 @@ RUN chmod -R a+rwx /workdir \
     && mkdir /model && chmod a+rwx /model \
     && mkdir /data && chmod a+rwx /data
 
-CMD python train.py
