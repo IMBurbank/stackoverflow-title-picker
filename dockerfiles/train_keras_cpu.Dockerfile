@@ -1,6 +1,7 @@
 FROM python:3.6
 
 ARG MODEL=seq_std_keras.py
+ARG NOTEBOOK=train_keras_cpu.ipynb
 ARG TRAIN=train_keras.py
 ARG TRAINER=trainer_keras.py
 ARG UTILS=utils_seq.py
@@ -40,6 +41,7 @@ RUN apt-get update \
 WORKDIR /workdir
 
 COPY models/${MODEL} \
+        notebooks/train/${NOTEBOOK} \
         utils/${TRAIN} \
         utils/${TRAINER} \
         utils/${UTILS} \
