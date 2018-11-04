@@ -109,7 +109,7 @@ RUN pip3 install --upgrade \
 
 RUN mkdir /my-devel && chmod a+rwx /my-devel
 RUN mkdir /.local && chmod a+rwx /.local
-COPY dev-gpu-entry.sh /entry.sh
+COPY dev_gpu_entry.sh /entry.sh
 
 WORKDIR /my-devel
 EXPOSE 8888

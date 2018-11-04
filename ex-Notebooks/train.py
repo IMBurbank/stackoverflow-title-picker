@@ -91,7 +91,7 @@ def main():  # pylint: disable=too-many-statements
   parser.add_argument(
     "--output_train_body_vecs_npy", type=str, default="train_body_vecs.npy")
   parser.add_argument(
-    "--output_model_h5", type=str, default="seq2seq_model_tutorial.h5")
+    "--output_model_h5", type=str, default="trained_model_tutorial.h5")
 
   args = parser.parse_args()
 
@@ -241,18 +241,18 @@ def main():  # pylint: disable=too-many-statements
   # Seq2Seq Model.
   ################
 
-  seq2seq_Model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
+  trained_model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
 
-  seq2seq_Model.compile(
+  trained_model.compile(
     optimizer=optimizers.Nadam(lr=learning_rate),
     loss='sparse_categorical_crossentropy')
 
-  seq2seq_Model.summary()
+  trained_model.summary()
 
   #############
   # Save model.
   #############
-  seq2seq_Model.save(args.output_model_h5)
+  trained_model.save(args.output_model_h5)
 
   ######################
   # Upload model to GCS.
