@@ -24,6 +24,8 @@ RUN apt-get update \
         nltk \
         numpy \
         matplotlib \
+        msgpack-numpy==0.4.3.2 \
+        setuptools==39.1.0 \
         sklearn \
         tensorflow \
         tqdm \
@@ -34,14 +36,13 @@ RUN apt-get update \
         /usr/share/man \
         /usr/share/doc \
         /usr/share/doc-base
-    
+
 WORKDIR /workdir
 
 COPY models/${MODEL} \
         utils/${TRAIN} \
         utils/${TRAINER} \
         utils/${UTILS} \
-        utils/sh/download_data.py \
         ./
 
 RUN chmod -R a+rwx /workdir \
