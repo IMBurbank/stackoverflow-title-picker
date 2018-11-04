@@ -30,7 +30,7 @@ from utils import Inference
 # pylint: enable=no-name-in-module
 
 
-class Trainer(object): # pylint: disable=too-many-instance-attributes
+class Trainer(object):
     def __init__(self,
                  model_file,
                  output_dir,

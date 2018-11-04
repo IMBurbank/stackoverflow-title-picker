@@ -6,12 +6,13 @@ ARG TRAINER=trainer_keras.py
 ARG UTILS=utils_seq.py
 
 RUN apt-get update \
-    && apt-get install -y \
+    && apt-get install -y --no-install-recommends \
+        python-pandas \
         unzip \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
     && pip install --upgrade --no-cache-dir \
         annoy \
+        bernoulli \
         bs4 \
         dill \
         google-cloud-storage \
@@ -25,8 +26,15 @@ RUN apt-get update \
         matplotlib \
         sklearn \
         tensorflow \
-        tqdm
-
+        tqdm \
+    && rm -rf \
+        /var/lib/apt/lists/* \
+        /tmp/* \
+        /var/tmp/* \
+        /usr/share/man \
+        /usr/share/doc \
+        /usr/share/doc-base
+    
 WORKDIR /workdir
 
 COPY models/${MODEL} \
