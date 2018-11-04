@@ -2,11 +2,15 @@
 Sequence model utilility functions.
 
 """
+# pylint: disable=import-error
 import logging
 import dill as dpickle
 import numpy as np
+
 from matplotlib import pyplot as plt
+
 import tensorflow as tf
+
 from IPython.display import SVG, display
 from keras import backend as K
 from keras.layers import Input
@@ -15,6 +19,7 @@ from keras.utils.vis_utils import model_to_dot
 from annoy import AnnoyIndex
 from tqdm import tqdm, tqdm_notebook
 from nltk.translate.bleu_score import corpus_bleu
+# pylint: enable=import-error
 
 
 def load_text_processor(fname='title_pp.dpkl'):
@@ -60,7 +65,7 @@ def load_decoder_inputs(decoder_np_vecs='train_title_vecs.npy'):
     Returns
     -------
     decoder_input_data : numpy.array
-        The data fed to the decoder as input during training for 
+        The data fed to the decoder as input during training for
         teacher forcing. This is the same as `decoder_np_vecs` except
         the last position.
     decoder_target_data : numpy.array
@@ -173,12 +178,15 @@ def extract_decoder_model(model):
     A Keras model object with the following inputs and outputs:
 
     Inputs of Keras Model That Is Returned:
-    1: the embedding index for the last predicted word or the <Start> indicator
-    2: the last hidden state, or in the case of the first word the hidden state from the encoder
+    1:  the embedding index for the last predicted word
+        or the <Start> indicator
+    2:  the last hidden state, or in the case of the first
+        word the hidden state from the encoder
 
     Outputs of Keras Model That Is Returned:
     1.  Prediction (class probabilities) for the next word
-    2.  The hidden state of the decoder, to be fed back into the decoder at the next time step
+    2.  The hidden state of the decoder, to be fed back into
+        the decoder at the next time step
 
     Implementation Notes:
     ----------------------
@@ -187,7 +195,7 @@ def extract_decoder_model(model):
     inference time.
 
     """
-    # the latent dimension is the same throughout the architecture so we 
+    # the latent dimension is the same throughout the architecture so we
     # are going to cheat and grab the latent dimension of the embedding
     # because that is the same as what is output from the decoder
     latent_dim = model.get_layer('Decoder-Word-Embedding').output_shape[-1]
@@ -197,10 +205,10 @@ def extract_decoder_model(model):
     dec_emb = model.get_layer('Decoder-Word-Embedding')(decoder_inputs)
     dec_bn = model.get_layer('Decoder-Batchnorm-1')(dec_emb)
 
-    # Instead of setting the intial state from the encoder and forgetting 
-    # about it, during inference we are not doing teacher forcing, so we 
+    # Instead of setting the intial state from the encoder and forgetting
+    # about it, during inference we are not doing teacher forcing, so we
     # will have to have a feedback loop from predictions back into the GRU,
-    # thus we define this input layer for the state so we can add this 
+    # thus we define this input layer for the state so we can add this
     # capability
     gru_inference_state_input = Input(shape=(latent_dim,),
                                       name='hidden_state_input')
@@ -228,6 +236,13 @@ def extract_decoder_model(model):
 
 
 class Inference(object):
+    """
+    Use the model to infer.
+
+    Parameters
+    ----------
+
+    """
 
     # pylint: disable=too-many-instance-attributes
 
@@ -284,12 +299,12 @@ class Inference(object):
             # retrieve word from index prediction
             pred_word_str = self.pp_title.id2token[pred_idx]
 
-            if (pred_word_str == '_end_' or 
-                len(decoded_sentence) >= title_maxlen):
+            if (pred_word_str == '_end_' or
+                    len(decoded_sentence) >= title_maxlen):
 
                 stop_condition = True
                 break
-    
+
             decoded_sentence.append(pred_word_str)
 
             # update the decoder for the next word
@@ -419,7 +434,7 @@ class Inference(object):
         holdout_bodies : List[str]
             These are the question bodies that we want to summarize
         holdout_titles : List[str]
-            This is the ground truth we are trying to predict --> 
+            This is the ground truth we are trying to predict -->
             question titles
 
         Returns
@@ -437,8 +452,8 @@ class Inference(object):
         for i in tqdm_notebook(range(num_examples)):
             _, yhat = self.generate_question_title(holdout_bodies[i])
 
-        actual.append(self.pp_title.process_text([holdout_titles[i]])[0])
-        predicted.append(self.pp_title.process_text([yhat])[0])
+            actual.append(self.pp_title.process_text([holdout_titles[i]])[0])
+            predicted.append(self.pp_title.process_text([yhat])[0])
 
         # calculate BLEU score
         logging.warning('Calculating BLEU.')

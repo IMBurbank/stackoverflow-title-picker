@@ -8,14 +8,22 @@ from __future__ import print_function
 
 import os
 
+# pylint: disable=import-error
 import numpy as np
 import dill as dpickle
 
+# pylint: disable=no-name-in-module
 from keras.models import load_model
 from utils import Inference
+# pylint: enable=import-error
+# pylint: enable=no-name-in-module
 
 
 class TitlePicker(object):
+    """
+    TitlePicker
+
+    """
 
     def __init__(self):
         body_pp_file = os.getenv('BODY_PP_FILE', 'body_pp.dpkl')
@@ -39,5 +47,5 @@ class TitlePicker(object):
                 feature_names): # pylint: disable=unused-argument
 
         return np.asarray(
-            [[self.model.generate_issue_title(body[0])[1]] 
-                for body in input_text])
+            [[self.model.generate_issue_title(body[0])[1]]
+             for body in input_text])

@@ -27,11 +27,15 @@ import tempfile
 import time
 import zipfile
 
+# pylint: disable=import-error
 from google.cloud import storage
 
 # Import local modules
+# pylint: disable=no-name-in-module
 import model
 import trainer
+# pylint: enable=import-error
+# pylint: enable=no-name-in-module
 
 
 GCS_REGEX = re.compile("gs://([^/]*)(/.*)?")
@@ -51,7 +55,7 @@ def split_gcs_uri(gcs_uri):
 
 
 def is_gcs_path(gcs_uri):
-  return GCS_REGEX.match(gcs_uri)
+    return GCS_REGEX.match(gcs_uri)
 
 
 def process_input_file(remote_file):

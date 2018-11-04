@@ -7,10 +7,16 @@ from __future__ import print_function
 
 import os
 
+# pylint: disable=import-error
 import numpy as np
 import dill as dpickle
+
 from keras.models import load_model
+
+# pylint: disable=no-name-in-module
 from seq2seq_utils import Seq2Seq_Inference
+# pylint: enable=import-error
+# pylint: enable=no-name-in-module
 
 class TitlePicker(object):
 

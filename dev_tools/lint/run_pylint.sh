@@ -15,6 +15,7 @@ project_root="$(pwd | sed s/${ROOT_DIR}.*/${ROOT_DIR}/)"
 echo "project_root: ${project_root}"
 
 docker build \
+	#--no-cache  \
 	-f ${DOCKER_PATH}/pylint.Dockerfile\
 	-t pylint \
 	${DOCKER_PATH}

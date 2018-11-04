@@ -19,17 +19,24 @@ import os
 import re
 import zipfile
 
-from google.cloud import storage  # pylint: disable=no-name-in-module
+# pylint: disable=import-error
+from google.cloud import storage
+
 import dill as dpickle
 import numpy as np
 import pandas as pd
+
 from keras import optimizers
 from keras.layers import GRU, BatchNormalization, Dense, Embedding, Input
 from keras.models import Model
 from sklearn.model_selection import train_test_split
-
 from ktext.preprocess import processor
+
+# pylint: disable=no-name-in-module
 from seq2seq_utils import load_encoder_inputs, load_text_processor
+# pylint: enable=import-error
+# pylint: enable=no-name-in-module
+
 
 GCS_REGEX = re.compile("gs://([^/]*)(/.*)?")
 

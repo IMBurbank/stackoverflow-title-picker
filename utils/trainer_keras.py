@@ -9,17 +9,11 @@ import logging
 import os
 import sys
 
+# pylint: disable=import-error
 import numpy as np
 import dill as dpickle
 import pandas as pd
 import tensorflow as tf
-# TODO(https://github.com/kubeflow/examples/issues/280)
-# TODO(https://github.com/kubeflow/examples/issues/196)
-# We'd like to switch to importing keras from TensorFlow in order to support
-# TF.Estimator but using tensorflow.keras we can't train a model either using
-# Keras' fit function or using TF.Estimator.
-# from tensorflow import keras
-# from tensorflow.keras.callbacks import CSVLogger, ModelCheckpoint
 import keras
 
 from keras.callbacks import CSVLogger, ModelCheckpoint
@@ -27,13 +21,16 @@ from bs4 import BeautifulSoup
 from ktext.preprocess import processor
 from sklearn.model_selection import train_test_split
 
+# pylint: disable=no-name-in-module
 from utils import load_decoder_inputs
 from utils import load_encoder_inputs
 from utils import load_text_processor
 from utils import Inference
+# pylint: enable=import-error
+# pylint: enable=no-name-in-module
 
 
-class Trainer(object): #pylint: disable=too-many-instance-attributes
+class Trainer(object): # pylint: disable=too-many-instance-attributes
     def __init__(self,
                  model_file,
                  output_dir,
@@ -59,10 +56,10 @@ class Trainer(object): #pylint: disable=too-many-instance-attributes
 
         self.model_file = model_file
         self.output_dir = output_dir
-        self.body_keep_n= body_keep_n
-        self.body_maxlen= body_maxlen
-        self.title_keep_n= title_keep_n
-        self.title_maxlen= title_maxlen
+        self.body_keep_n = body_keep_n
+        self.body_maxlen = body_maxlen
+        self.title_keep_n = title_keep_n
+        self.title_maxlen = title_maxlen
 
         self.tf_config = os.environ.get('TF_CONFIG', '{}')
         self.tf_config_json = json.loads(self.tf_config)
@@ -102,6 +99,11 @@ class Trainer(object): #pylint: disable=too-many-instance-attributes
             Number of samples to use. Set to None to use entire dataset.
 
         """
+        def strip_list_html(t_list):
+            return (
+                [BeautifulSoup(text, "html5lib").get_text() for text in t_list]
+            )
+
         # We preprocess the data if we are the master or chief.
         # Or if we aren't running distributed.
         if self.job_name and self.job_name.lower() not in ["master", "chief"]:
@@ -130,7 +132,7 @@ class Trainer(object): #pylint: disable=too-many-instance-attributes
         self.body_pp = processor(keep_n=self.body_keep_n,
                                  padding_maxlen=self.body_maxlen)
         train_body_vecs = self.body_pp.fit_transform(
-            BeautifulSoup(train_body_raw, "html5lib").get_text())
+            strip_list_html(train_body_raw))
 
         logging.info('Example original body: %s', train_body_raw[0])
         logging.info('Example body after pre-processing: %s',
@@ -165,7 +167,7 @@ class Trainer(object): #pylint: disable=too-many-instance-attributes
         ----------
         learning_rate: float
             Training learning rate.
-        
+
         """
         logging.info("starting")
 
@@ -240,7 +242,7 @@ class Trainer(object): #pylint: disable=too-many-instance-attributes
     def evaluate(self):
         """
         Generates predictions on holdout set and calculates BLEU Score.
-        
+
         """
         inference = Inference(encoder_preprocessor=self.body_pp,
                               decoder_preprocessor=self.title_pp,
