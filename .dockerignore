@@ -1,0 +1,7 @@
+# Project directories
+.vscode
+assets
+workflow
+
+# Project files
+*.md
