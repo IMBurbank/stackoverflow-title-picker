@@ -77,7 +77,7 @@
     spartakus: {
       name: 'spartakus',
       reportUsage: 'true',
-      usageId: '449986637',
+      usageId: '31611144',
     },
     "cloud-endpoints": {
       name: 'cloud-endpoints',

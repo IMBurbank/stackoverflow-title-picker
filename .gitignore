@@ -1,6 +1,11 @@
+# General Build
+.cache
+
 # Jupyter
 .ipynb_checkpoints/
 
 # Editor
 .vscode/
 
+# Secrets
+secrets

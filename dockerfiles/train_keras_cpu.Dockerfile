@@ -39,6 +39,9 @@ RUN apt-get update \
         /usr/share/doc-base
 
 WORKDIR /workdir
+EXPOSE 8000
+EXPOSE 8080
+EXPOSE 8888
 
 COPY models/${MODEL} \
         notebooks/train/${NOTEBOOK} \

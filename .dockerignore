@@ -1,7 +1,9 @@
 # Project directories
+.cache
 .vscode
 assets
-samples
+data
+secrets
 workflow
 
 # Project files

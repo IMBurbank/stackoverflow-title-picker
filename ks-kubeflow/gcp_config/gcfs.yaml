@@ -9,7 +9,7 @@ resources:
   properties:
     parent: projects/stackoverflow-title-picker/locations/us-east1-d
     # Any name of the instance would do
-    instanceId: stackoverflow-title-picker-fs
+    instanceId: stackoverflow-title-picker-gcfs
     tier: STANDARD
     description: Filestore for Kubeflow
     networks:
