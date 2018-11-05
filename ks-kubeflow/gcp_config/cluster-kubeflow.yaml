@@ -66,7 +66,7 @@ resources:
       masterAuthorizedNetworksConfigEnabled: false
       masterAuthorizedNetworksConfigCidr:
       - cidrBlock: 1.2.3.4/32
-    users: ["user:bassmanburbank@gmail.com"]
+    users: ["user:isaacmburbank@gmail.com"]
       # List users to grant appropriate GCP permissions to use Kubeflow.
       # These can either be individual users (Google accounts) or Google
       # Groups.

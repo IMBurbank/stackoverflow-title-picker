@@ -6,7 +6,7 @@
 # * each role in roles is granted to each member in members
 bindings:
 - members:
-  - serviceAccount:ks-kubeflow-admin@stackoverflow-title-picker.iam.gserviceaccount.com
+  - serviceAccount:ks-kubeflow-admin@so-title-picker.iam.gserviceaccount.com
   roles:
   # Grant permissions needed to push the app to a cloud repository
   - roles/source.admin
@@ -15,7 +15,7 @@ bindings:
   # Network admin is needed to enable IAP and configure network settings like backend timeouts and health checks
   - roles/compute.networkAdmin
 - members:
-  - serviceAccount:ks-kubeflow-user@stackoverflow-title-picker.iam.gserviceaccount.com
+  - serviceAccount:ks-kubeflow-user@so-title-picker.iam.gserviceaccount.com
   roles:
   # Grant permissions needed to submit builds to Google Cloud Container Builder
   - roles/cloudbuild.builds.editor
@@ -27,7 +27,7 @@ bindings:
   - roles/bigquery.admin
   - roles/dataflow.admin
 - members:
-  - serviceAccount:ks-kubeflow-vm@stackoverflow-title-picker.iam.gserviceaccount.com
+  - serviceAccount:ks-kubeflow-vm@so-title-picker.iam.gserviceaccount.com
   roles:
   # VM service account is used to write logs
   - roles/logging.logWriter
@@ -36,6 +36,6 @@ bindings:
   # VM service account is used to pull image from gcr
   - roles/storage.objectViewer
 - members:
-  - user:bassmanburbank@gmail.com
+  - user:isaacmburbank@gmail.com
   roles:
   - roles/iap.httpsResourceAccessor

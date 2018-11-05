@@ -77,7 +77,7 @@
     spartakus: {
       name: 'spartakus',
       reportUsage: 'true',
-      usageId: '31611144',
+      usageId: '461904142',
     },
     "cloud-endpoints": {
       name: 'cloud-endpoints',
@@ -86,7 +86,7 @@
       secretName: 'admin-gcp-sa',
     },
     "cert-manager": {
-      acmeEmail: 'bassmanburbank@gmail.com',
+      acmeEmail: 'isaacmburbank@gmail.com',
       acmeUrl: 'https://acme-v02.api.letsencrypt.org/directory',
       certManagerImage: 'quay.io/jetstack/cert-manager-controller:v0.4.0',
       name: 'cert-manager',
@@ -95,7 +95,7 @@
     "iap-ingress": {
       disableJwtChecking: 'false',
       envoyImage: 'gcr.io/kubeflow-images-public/envoy:v20180309-0fb4886b463698702b6a08955045731903a18738',
-      hostname: 'ks-kubeflow.endpoints.stackoverflow-title-picker.cloud.goog',
+      hostname: 'ks-kubeflow.endpoints.so-title-picker.cloud.goog',
       ingressSetupImage: 'gcr.io/kubeflow-images-public/ingress-setup:latest',
       ipName: 'ks-kubeflow-ip',
       issuer: 'letsencrypt-prod',
@@ -109,7 +109,7 @@
       image: 'gcr.io/kubeflow-images-public/ubuntu:18.04',
       name: 'kubeflow-gcfs',
       path: '/kubeflow',
-      serverIP: '10.139.239.82',
+      serverIP: '10.205.218.74',
       storageCapacity: '1024',
     },
   },

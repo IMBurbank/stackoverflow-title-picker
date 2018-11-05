@@ -7,9 +7,9 @@ resources:
 - name: filestore
   type: gcp-types/file-v1beta1:projects.locations.instances
   properties:
-    parent: projects/stackoverflow-title-picker/locations/us-east1-d
+    parent: projects/so-title-picker/locations/us-east1-d
     # Any name of the instance would do
-    instanceId: stackoverflow-title-picker-gcfs
+    instanceId: kubeflow-gcfs
     tier: STANDARD
     description: Filestore for Kubeflow
     networks:
