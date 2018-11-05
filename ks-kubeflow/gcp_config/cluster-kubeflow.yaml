@@ -28,9 +28,9 @@ resources:
   type: cluster.jinja
   properties:
     # You need to use a zone with Haswell because that's what TFServing requires.
-    zone: us-central1-a
+    zone: us-east1-d
     # We need to set the initialCluserVersion to prevent auto upgrading
-    cluster-version: 1.10.7-gke.6
+    cluster-version: 1.10.9-gke.0
     # Set this to v1beta1 to use beta features such as private clusters,
     gkeApiVersion: v1
     # An arbitrary string appending to name of nodepools

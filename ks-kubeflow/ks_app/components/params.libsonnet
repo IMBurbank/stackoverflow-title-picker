@@ -25,7 +25,7 @@
     jupyterhub: {
       accessLocalFs: 'false',
       cloud: 'gke',
-      disks: 'null',
+      disks: 'kubeflow-gcfs',
       gcpSecretName: 'user-gcp-sa',
       image: 'gcr.io/kubeflow/jupyterhub-k8s:v20180531-3bb991b1',
       jupyterHubAuthenticator: 'iap',
@@ -77,7 +77,7 @@
     spartakus: {
       name: 'spartakus',
       reportUsage: 'true',
-      usageId: '467267234',
+      usageId: '449986637',
     },
     "cloud-endpoints": {
       name: 'cloud-endpoints',
@@ -104,6 +104,13 @@
       oauthSecretName: 'kubeflow-oauth',
       privateGKECluster: 'false',
       secretName: 'envoy-ingress-tls',
+    },
+    "google-cloud-filestore-pv": {
+      image: 'gcr.io/kubeflow-images-public/ubuntu:18.04',
+      name: 'kubeflow-gcfs',
+      path: '/kubeflow',
+      serverIP: '10.139.239.82',
+      storageCapacity: '1024',
     },
   },
 }
