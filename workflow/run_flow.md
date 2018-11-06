@@ -2,6 +2,20 @@
 
 ## Ensure Env Set
 
+### Set OAuth
+
+- Credentials consent screen - Authorized domains
+
+```
+so-title-picker-dev.cloud.goog
+```
+
+- Create OAuth Cliend Id Web App Credential
+
+```
+https://ks-kubeflow.endpoints.so-title-picker-dev.cloud.goog/_gcp_gatekeeper/authenticate
+```
+
 ### Download Ksonnet
 
 ```bash
@@ -132,4 +146,13 @@ kubectl describe po/jupyter-isaacmburbank-40gmail-2ecom
 ```bash
 cd ${PROJECT_DIR}/${KFAPP}
 ${KUBEFLOW_DIR}/scripts/kfctl.sh delete all
+
+# Delete IAM bindings
+export DIR=$KUBEFLOW_DIR/scripts/gke
+python "${DIR}/iam_patch.py" --action=remove \
+  --project=${PROJECT} \
+  --iam_bindings_file="${PROJECT_DIR}/${KFAPP}/gcp_config/iam_bindings.yaml"
+python "${DIR}/iam_patch.py" --action=add  \
+  --project=${PROJECT} \
+  --iam_bindings_file="${PROJECT_DIR}/${KFAPP}/gcp_config/iam_bindings.yaml"
 ```
