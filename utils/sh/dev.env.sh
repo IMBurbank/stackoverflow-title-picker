@@ -8,5 +8,5 @@ export KS_DIST=linux_amd64
 export KS_PKG=ks_${KS_VER}_${KS_DIST}
 
 export KUBEFLOW_SRC=${HOME}/kubeflow
-export KUBEFLOW_TAG=v0.3.1
+export KUBEFLOW_TAG=v0.3.2
 export KFAPP=ks-kubeflow

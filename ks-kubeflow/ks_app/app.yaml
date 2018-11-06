@@ -1,42 +1,35 @@
-apiVersion: 0.2.0
-environments:
-  default:
-    destination:
-      namespace: kubeflow
-      server: https://35.237.209.173
-    k8sVersion: v1.10.9
-    path: default
+apiVersion: 0.3.0
 kind: ksonnet.io/app
 libraries:
-  argo:
+  kubeflow/argo:
     name: argo
     registry: kubeflow
     version: ""
-  core:
+  kubeflow/core:
     name: core
     registry: kubeflow
     version: ""
-  examples:
+  kubeflow/examples:
     name: examples
     registry: kubeflow
     version: ""
-  katib:
+  kubeflow/katib:
     name: katib
     registry: kubeflow
     version: ""
-  mpi-job:
+  kubeflow/mpi-job:
     name: mpi-job
     registry: kubeflow
     version: ""
-  pytorch-job:
+  kubeflow/pytorch-job:
     name: pytorch-job
     registry: kubeflow
     version: ""
-  seldon:
+  kubeflow/seldon:
     name: seldon
     registry: kubeflow
     version: ""
-  tf-serving:
+  kubeflow/tf-serving:
     name: tf-serving
     registry: kubeflow
     version: ""
