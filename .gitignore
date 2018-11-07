@@ -9,4 +9,10 @@
 
 # Secrets
 secrets
+key.json
 .env
+
+# Sanity
+foo
+bar
+baz

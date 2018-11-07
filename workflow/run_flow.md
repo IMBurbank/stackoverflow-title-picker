@@ -10,7 +10,7 @@
 so-title-picker-dev.cloud.goog
 ```
 
-- Create OAuth Cliend Id Web App Credential
+- Create OAuth Client Id Web App Credential
 
 ```
 https://ks-kubeflow.endpoints.so-title-picker-dev.cloud.goog/_gcp_gatekeeper/authenticate
