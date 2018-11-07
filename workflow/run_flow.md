@@ -105,10 +105,10 @@ gcloud --project=${PROJECT} beta filestore instances list
 # Copy IP Address
 export GCFS_INSTANCE_IP_ADDRESS=<ip_address> # Paste IP_ADDRESS
 
-ks generate google-cloud-filestore-pv google-cloud-filestore-pv --name="ks-kubeflow-gcfs" \
+ks generate google-cloud-filestore-pv google-cloud-filestore-pv --name="kubeflow" \
    --storageCapacity="${GCFS_STORAGE}" \
    --serverIP="${GCFS_INSTANCE_IP_ADDRESS}"
-ks param set jupyterhub disks "ks-kubeflow-gcfs"
+ks param set jupyterhub disks "kubeflow"
  
 cd ${PROJECT_DIR}/${KFAPP}
 ${KUBEFLOW_REPO}/scripts/kfctl.sh apply k8s
@@ -138,6 +138,41 @@ gcloud --project=${PROJECT} beta filestore instances list
 
 # Filestore pod details
 kubectl describe po/jupyter-isaacmburbank-40gmail-2ecom
+```
+
+## Run Setup
+
+### Copy Cloud Storage Service Account Key
+
+```bash
+gcloud iam service-accounts keys create ${PROJECT_DIR}/models/keys/key.json \
+  --iam-account ${DEPLOYMENT_NAME}-user@${PROJECT}.iam.gserviceaccount.com
+```
+
+### Build training Docker Image and push to gcr
+
+```bash
+
+export DOCKERFILE=train_keras_cpu.Dockerfile
+export BUCKET_NAME=test-bucket
+export NFS_NAME=test-nfs
+export VERSION_TAG=$(date +%s)
+export TRAIN_IMG_PATH=gcr.io/${PROJECT}/${DEPLOYMENT_NAME}-train:${VERSION_TAG}
+
+# Ensure nfs_name and nfs_ip set
+export GCFS_FILESHARE_NAME=kubeflow
+export GCFS_INSTANCE_IP_ADDRESS=10.83.40.74
+
+docker build -f ${PROJECT_DIR}/models/${DOCKERFILE} \
+	-t ${TRAIN_IMG_PATH} \
+  --build-arg version=${VERSION_TAG} \
+  --build-arg bucket=${BUCKET_NAME} \
+  --build-arg nfs_name=${GCFS_FILESHARE_NAME} \
+  --build-arg nfs_ip=${GCFS_INSTANCE_IP_ADDRESS} \
+  ${PROJECT_DIR}/models/
+
+docker push ${TRAIN_IMG_PATH}
+
 ```
 
 
