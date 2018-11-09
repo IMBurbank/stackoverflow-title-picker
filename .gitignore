@@ -1,5 +1,9 @@
 # General Build
 .cache
+.deploy
+__pycache__
+deploy
+temp
 
 # Jupyter
 .ipynb_checkpoints/
@@ -9,3 +13,14 @@
 
 # Secrets
 secrets
+key.json
+.env
+
+# Sanity
+foo
+foo.*
+bar
+baz
+
+story
+notes

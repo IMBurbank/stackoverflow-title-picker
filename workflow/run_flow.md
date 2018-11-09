@@ -2,6 +2,20 @@
 
 ## Ensure Env Set
 
+### Set OAuth
+
+- Credentials consent screen - Authorized domains
+
+```
+so-title-picker-dev.cloud.goog
+```
+
+- Create OAuth Client Id Web App Credential
+
+```
+https://ks-kubeflow.endpoints.so-title-picker-dev.cloud.goog/_gcp_gatekeeper/authenticate
+```
+
 ### Download Ksonnet
 
 ```bash
@@ -91,10 +105,10 @@ gcloud --project=${PROJECT} beta filestore instances list
 # Copy IP Address
 export GCFS_INSTANCE_IP_ADDRESS=<ip_address> # Paste IP_ADDRESS
 
-ks generate google-cloud-filestore-pv google-cloud-filestore-pv --name="ks-kubeflow-gcfs" \
+ks generate google-cloud-filestore-pv google-cloud-filestore-pv --name="kubeflow" \
    --storageCapacity="${GCFS_STORAGE}" \
    --serverIP="${GCFS_INSTANCE_IP_ADDRESS}"
-ks param set jupyterhub disks "ks-kubeflow-gcfs"
+ks param set jupyterhub disks "kubeflow"
  
 cd ${PROJECT_DIR}/${KFAPP}
 ${KUBEFLOW_REPO}/scripts/kfctl.sh apply k8s
@@ -126,10 +140,99 @@ gcloud --project=${PROJECT} beta filestore instances list
 kubectl describe po/jupyter-isaacmburbank-40gmail-2ecom
 ```
 
+## Run Setup
+
+### Copy Cloud Storage Service Account Key
+
+```bash
+gcloud iam service-accounts keys create ${PROJECT_DIR}/models/keys/key.json \
+  --iam-account ${DEPLOYMENT_NAME}-user@${PROJECT}.iam.gserviceaccount.com
+```
+
+### Build training Docker Image and push to gcr
+
+```bash
+
+export DOCKERFILE=train_keras_cpu.Dockerfile
+export BUCKET_NAME=test-bucket
+export NFS_NAME=test-nfs
+export VERSION_TAG=$(date +%s)
+export TRAIN_IMG_PATH=gcr.io/${PROJECT}/${DEPLOYMENT_NAME}-train:${VERSION_TAG}
+
+# Ensure nfs_name and nfs_ip set
+export GCFS_FILESHARE_NAME=kubeflow
+export GCFS_INSTANCE_IP_ADDRESS=10.83.40.74
+
+docker build -f ${PROJECT_DIR}/models/${DOCKERFILE} \
+	-t ${TRAIN_IMG_PATH} \
+  --build-arg version=${VERSION_TAG} \
+  --build-arg bucket=${BUCKET_NAME} \
+  --build-arg nfs_name=${GCFS_FILESHARE_NAME} \
+  --build-arg nfs_ip=${GCFS_INSTANCE_IP_ADDRESS} \
+  ${PROJECT_DIR}/models/
+
+docker push ${TRAIN_IMG_PATH}
+
+```
+
+## Deploy to Serving to Cluster
+
+### Wrap Model For Deploy With Seldon
+
+```bash
+# Create build folder with wrapped model using hosted seldon image
+cd ${PROJECT_DIR}/models
+docker run -v $(pwd):/my_model seldonio/core-python-wrapper:0.7 /my_model TitlePicker 0.1 gcr.io --base-image=python:3.6 --image-name=so-title-picker-dev/title-picker
+
+# Build and push model docker image
+cd build
+docker build --force-rm=true -t gcr.io/so-title-picker-dev/title-picker:0.1 .
+docker push gcr.io/so-title-picker-dev/title-picker:0.1
+```
+
+### Deploy to Cluster
+
+```bash
+cd ${PROJECT_DIR}/${KFAPP}
+. env
+cd ks_app
+# Gives cluster-admin role to the default service account in the ${NAMESPACE}
+kubectl create clusterrolebinding seldon-admin --clusterrole=cluster-admin --serviceaccount=${NAMESPACE}:default
+# Install the kubeflow/seldon package
+ks pkg install kubeflow/seldon
+# Generate the seldon component and deploy it
+ks generate seldon seldon --name=seldon --namespace=${NAMESPACE}
+ks apply default -c seldon
+
+
+ks generate seldon-serve-simple-v1alpha2 title-picker-model-serving \
+  --name=title-picker \
+  --image=gcr.io/so-title-picker-dev/title-picker:0.1 \
+  --replicas=2
+ks apply default -c title-picker-model-serving
+```
+
+### Use Endpoint
+
+```bash
+kubectl port-forward $(kubectl get pods -n ${NAMESPACE} -l service=ambassador -o jsonpath='{.items[0].metadata.name}') -n ${NAMESPACE} 8080:80
+
+curl -X POST -H 'Content-Type: application/json' -d '{"data":{"ndarray":[["How to add a new property to disable detection of image stream files those ended with -is.yml from target directory. expected behaviour by default cube should not process image stream files if user does not set it. current behaviour cube always try to execute -is.yml files which can cause some problems in most of cases, for example if you are using kuberentes instead of openshift or if you use together fabric8 maven plugin with cube"]]}}' http://localhost:8080/seldon/title-picker/api/v0.1/predictions
+```
+
 
 ## Clean up
 
 ```bash
 cd ${PROJECT_DIR}/${KFAPP}
 ${KUBEFLOW_DIR}/scripts/kfctl.sh delete all
+
+# Delete IAM bindings
+export DIR=$KUBEFLOW_DIR/scripts/gke
+python "${DIR}/iam_patch.py" --action=remove \
+  --project=${PROJECT} \
+  --iam_bindings_file="${PROJECT_DIR}/${KFAPP}/gcp_config/iam_bindings.yaml"
+python "${DIR}/iam_patch.py" --action=add  \
+  --project=${PROJECT} \
+  --iam_bindings_file="${PROJECT_DIR}/${KFAPP}/gcp_config/iam_bindings.yaml"
 ```

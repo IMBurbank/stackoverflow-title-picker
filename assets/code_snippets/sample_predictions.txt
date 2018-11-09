@@ -1,0 +1,2027 @@
+==============================================
+============== Example # 54 =================
+
+https://stackoverflow.com/questions/31958370/why-php-function-strwordcount-returns-different-count-from-js-equivalent
+Question Body:
+ <p>I have this JS code which I think is equivalent to the PHP <code>str_word_count()</code> function, but still they return different words counts.</p>
+
+<p>My JS code:</p>
+
+<pre><code>//element f9 value  is:
+"Yes, for all people asking ? ? ? their selfs Have you ever dreamed to 
+visite World Travel Market 2015 ? we can confirm that now it is a great
+ time to go to London for World Travel Market 2015Yes, for all people 
+asking their selfs Have you ever dreamed to visite World Travel Market 2015 ? 
+we can confirm that now it is a great time to go to London for World 
+Travel Market 2015Yes, for all people asking their selfs Have you ever 
+dreamed to visite World Travel Market 2015 ? we can confirm that now it is
+ a great time to go to London for World 2015Yes, for all people asking
+ their selfs Have you ever dreamed to visite World 2015 we can confirm that 
+now it is a great time to go to London for World Travel Market 2015Yes, for 
+all people asking their selfs Have you ever dreamed to visite World Travel 
+Market 2015 ? we can confirm that now it is a great time to go to London 
+for World 2015Yes, for all people asking their selfs Have you ever dreamed 
+to visite World Travel Market 2015 ? we can confirm that now it is a great 
+time to go to London for World Travel Market 2015Yes, for all people asking 
+their selfs Have you ever dreamed to visite World 2015 we can confirm that 
+now it is a great time to go to London for World 2015Yes, for all people 
+asking their selfs Have you ever dreamed to visite World Travel Market 
+2015 ? we can confirm that now it is a great time to go to London for World 
+2015Yes, for all people asking their selfs Have you ever dreamed to visite 
+World 2015 ? we can confirm that now it is a great time to go to London for 
+World 2015"
+
+
+var words = document.getElementById("f9").value.replace(/([(\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!&lt;&gt;\|\:])/g, '');
+words = words.replace(/(^\s*)|(\s*$)/gi,"");
+words = words.replace(/[ ]{2,}/gi," ");
+words = words.replace(/\n /,"\n");
+words = words.split(' ').length;
+</code></pre>
+
+<p>outputs: 300</p>
+
+<p>My PHP code:</p>
+
+<pre><code>str_word_count("Yes, for all people asking ? ? ? their selfs Have you ever dreamed to 
+visite World Travel Market 2015 ? we can confirm that now it is a great
+ time to go to London for World Travel Market 2015Yes, for all people 
+asking their selfs Have you ever dreamed to visite World Travel Market 2015 ? 
+we can confirm that now it is a great time to go to London for World 
+Travel Market 2015Yes, for all people asking their selfs Have you ever 
+dreamed to visite World Travel Market 2015 ? we can confirm that now it is
+ a great time to go to London for World 2015Yes, for all people asking
+ their selfs Have you ever dreamed to visite World 2015 we can confirm that 
+now it is a great time to go to London for World Travel Market 2015Yes, for 
+all people asking their selfs Have you ever dreamed to visite World Travel 
+Market 2015 ? we can confirm that now it is a great time to go to London 
+for World 2015Yes, for all people asking their selfs Have you ever dreamed 
+to visite World Travel Market 2015 ? we can confirm that now it is a great 
+time to go to London for World Travel Market 2015Yes, for all people asking 
+their selfs Have you ever dreamed to visite World 2015 we can confirm that 
+now it is a great time to go to London for World 2015Yes, for all people 
+asking their selfs Have you ever dreamed to visite World Travel Market 
+2015 ? we can confirm that now it is a great time to go to London for World 
+2015Yes, for all people asking their selfs Have you ever dreamed to visite 
+World 2015 ? we can confirm that now it is a great time to go to London for 
+World 2015") 
+</code></pre>
+
+<p>outputs: 290</p>
+
+<p>What does the PHP <code>str_word_count()</code> doesn't count as word, which my JS code does? Also can you suggest what to change so I can get same count for JS and PHP code?</p> 
+
+Original Title:
+ Why php function str_word_count() returns different count from js equivalent?
+
+**** Machine Generated Title (Prediction) ****:
+ is there a way to get a list of all the elements
+
+
+==============================================
+============== Example # 819 =================
+
+https://stackoverflow.com/questions/30780837/cakephp-find-where-not-equal
+Question Body:
+ <p>can you see the error guys ? my AND conditions is ignored! I'm getting so frustrated with those arrays..</p>
+
+<pre><code> $transaction_query = $this-&gt;Transaction-&gt;find('all',
+                [
+                    'limit' =&gt; $countList,
+                    'fields' =&gt; ['Transaction.client_id','Transaction.name','Transaction.created','Transaction.message_id','Transaction.credit'],
+                    'conditions' =&gt; ['Transaction.id' =&gt; $client_id],
+                    'AND' =&gt; ['Transaction.name !=' =&gt; 'Facturation']
+                ]);
+</code></pre> 
+
+Original Title:
+ CakePHP find WHERE NOT EQUAL
+
+**** Machine Generated Title (Prediction) ****:
+ mysql error message not working
+
+
+==============================================
+============== Example # 598 =================
+
+https://stackoverflow.com/questions/1365906/screensavers-with-xna-and-net
+Question Body:
+ <p>I'm fairly sure you can create screensavers with.NET but are there any tutorials on doing so? and how well can you make XNA screensavers?</p> 
+
+Original Title:
+ Screensavers With XNA and .NET?
+
+**** Machine Generated Title (Prediction) ****:
+ how to create a simple xna loop
+
+
+==============================================
+============== Example # 432 =================
+
+https://stackoverflow.com/questions/33757931/is-there-something-like-the-swift-optional-chaining-in-javascript
+Question Body:
+ <p>I've been doing a lot of code likes this in javascript</p>
+
+<p><code>if (params &amp;&amp; params.profile &amp;&amp; params.profile.address &amp;&amp; params.profile.address.default)</code></p>
+
+<p>where I have to check for each optional, it gets pretty tedious.  Is there a better way in javascript that's similar to how swift would deal with optionals, e.g.</p>
+
+<p><code>if let checked = params?.profile?.address?.default?</code></p> 
+
+Original Title:
+ Is there something like the swift optional chaining in javascript?
+
+**** Machine Generated Title (Prediction) ****:
+ how to use a ruby hash to a string with a different
+
+
+==============================================
+============== Example # 386 =================
+
+https://stackoverflow.com/questions/29578776/how-can-i-log-my-sql-calls-in-visual-studio-
+Question Body:
+ <p>I used to have it working great. I would just select the output window and all the calls would be logged and output. But then I reinstalled VS 2013 and now I see nothing. </p>
+
+<p>Please note this is a built in feature. Not something I used to do with debug calls or anything in my code. </p>
+
+<p>I have been doing this for over a year now and just cannot figure out what option I selected to make it happen. Can anyone remember how to do this?</p> 
+
+Original Title:
+ How can I log my SQL calls in Visual Studio 2013?
+
+**** Machine Generated Title (Prediction) ****:
+ how to debug a visual studio number
+
+
+==============================================
+============== Example # 851 =================
+
+https://stackoverflow.com/questions/48233157/cannot-connect-to-azure-file-share
+Question Body:
+ <p>Created Azure file share in portal and copied the PowerShell script to connect it as drive Q: (verified not in use). Response:</p>
+
+<pre><code>New-PSDrive : The network resource type is not correct
+At line:3 char:1
++ New-PSDrive -Name Q -PSProvider FileSystem -Root "\\xxxx.file.c ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : InvalidOperation: (Q:PSDriveInfo) [New-PSDrive],  Win32Exception
++ FullyQualifiedErrorId :      CouldNotMapNetworkDrive,Microsoft.PowerShell.Commands.NewPSDriveCommand
+</code></pre>
+
+<p>where "xxxx" is the share name. The PS command was copied directly from the portal and not altered. </p> 
+
+Original Title:
+ Cannot connect to Azure File Share
+
+**** Machine Generated Title (Prediction) ****:
+ azure blob file not found
+
+
+==============================================
+============== Example # 605 =================
+
+https://stackoverflow.com/questions/8979060/how-to-debug-nullreferenceexception-in-presentationframework
+Question Body:
+ <p>My .NET 4 application uses the WPF TreeView which I have enhanced to enable keyboard navigation and lazy loading, for example. My <strong>problem</strong> is that, very rarely, the exception shown below is thrown. This happened to me only once during months of development, and I have bug reports from several customers who also get this once in a while. It is so rare that I cannot change something, play around with the app for a while and know if the problem is gone or not.</p>
+
+<p>But my main <strong>question</strong> is: the stack trace shows only Microsoft code, there is nothing from me in there. Is this a bug in .NET/WPF? And are there any chances of getting to the root cause?</p>
+
+<pre><code>Type: System.NullReferenceException
+Message: Object reference not set to an instance of an object.
+Source: PresentationFramework
+Stack trace:    at System.Windows.Controls.ItemContainerGenerator.ContainerFromIndex(Int32 index)
+  at System.Windows.Controls.TreeViewItem.FindNextFocusableItem(Boolean walkIntoSubtree)
+  at System.Windows.Controls.TreeViewItem.InternalPredictFocus(FocusNavigationDirection direction)
+  at System.Windows.Controls.VirtualizingStackPanel.FocusChanged(KeyboardFocusChangedEventArgs e)
+  at System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+  at System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+  at System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+  at System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+  at System.Windows.Input.InputManager.ProcessStagingArea()
+  at System.Windows.Input.KeyboardDevice.ChangeFocus(DependencyObject focus, Int32 timestamp)
+  at System.Windows.Input.KeyboardDevice.Focus(DependencyObject focus, Boolean askOld, Boolean askNew, Boolean forceToNullIfFailed)
+  at System.Windows.Input.KeyboardDevice.Focus(IInputElement element)
+  at System.Windows.UIElement.Focus()
+  at System.Windows.Controls.TreeViewItem.OnItemsChanged(NotifyCollectionChangedEventArgs e)
+  at System.Windows.Controls.ItemsControl.OnItemCollectionChanged(Object sender, NotifyCollectionChangedEventArgs e)
+  at System.Collections.Specialized.NotifyCollectionChangedEventHandler.Invoke(Object sender, NotifyCollectionChangedEventArgs e)
+  at System.Windows.Data.CollectionView.OnCollectionChanged(NotifyCollectionChangedEventArgs args)
+  at System.Windows.Controls.ItemCollection.SetCollectionView(CollectionView view)
+  at System.Windows.Controls.ItemsControl.OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+  at System.Windows.DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+  at System.Windows.FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+  at System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+  at System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry&amp; newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+  at System.Windows.Data.BindingExpressionBase.Invalidate(Boolean isASubPropertyChange)
+  at System.Windows.Data.BindingExpression.Activate(Object item)
+  at System.Windows.Data.BindingExpression.OnDataContextChanged(DependencyObject contextElement)
+  at System.Windows.Data.BindingExpression.HandlePropertyInvalidation(DependencyObject d, DependencyPropertyChangedEventArgs args)
+  at System.Windows.Data.BindingExpressionBase.OnPropertyInvalidation(DependencyObject d, DependencyPropertyChangedEventArgs args)
+  at System.Windows.Data.BindingExpression.OnPropertyInvalidation(DependencyObject d, DependencyPropertyChangedEventArgs args)
+  at System.Windows.DependentList.InvalidateDependents(DependencyObject source, DependencyPropertyChangedEventArgs sourceArgs)
+  at System.Windows.DependencyObject.NotifyPropertyChange(DependencyPropertyChangedEventArgs args)
+  at System.Windows.DependencyObject.UpdateEffectiveValue(EntryIndex entryIndex, DependencyProperty dp, PropertyMetadata metadata, EffectiveValueEntry oldEntry, EffectiveValueEntry&amp; newEntry, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType)
+  at System.Windows.DependencyObject.SetValueCommon(DependencyProperty dp, Object value, PropertyMetadata metadata, Boolean coerceWithDeferredReference, Boolean coerceWithCurrentValue, OperationType operationType, Boolean isInternal)
+  at System.Windows.DependencyObject.SetValue(DependencyProperty dp, Object value)
+  at System.Windows.Controls.ItemContainerGenerator.System.Windows.Controls.Primitives.IItemContainerGenerator.RemoveAll()
+  at System.Windows.Controls.VirtualizingStackPanel.ClearAllContainers(ItemsControl itemsControl)
+  at System.Windows.Controls.ItemsControl.MS.Internal.Controls.IGeneratorHost.ClearContainerForItem(DependencyObject container, Object item)
+  at System.Windows.Controls.ItemContainerGenerator.UnlinkContainerFromItem(DependencyObject container, Object item)
+  at System.Windows.Controls.ItemContainerGenerator.Remove(GeneratorPosition position, Int32 count, Boolean isRecycling)
+  at System.Windows.Controls.VirtualizingStackPanel.CleanupRange(IList children, IItemContainerGenerator generator, Int32 startIndex, Int32 count)
+  at System.Windows.Controls.VirtualizingStackPanel.CleanupContainers(Int32 firstViewport, ItemsControl itemsControl)
+  at System.Windows.Controls.VirtualizingStackPanel.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)
+  at System.Windows.Controls.ItemsPresenter.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Grid.MeasureCell(Int32 cell, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureCellsGroup(Int32 cellsHead, Size referenceSize, Boolean ignoreDesiredSizeU, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.TreeViewItem.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.VirtualizingStackPanel.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)
+  at System.Windows.Controls.ItemsPresenter.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Grid.MeasureCell(Int32 cell, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureCellsGroup(Int32 cellsHead, Size referenceSize, Boolean ignoreDesiredSizeU, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.TreeViewItem.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.VirtualizingStackPanel.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)
+  at System.Windows.Controls.ItemsPresenter.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Grid.MeasureCell(Int32 cell, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureCellsGroup(Int32 cellsHead, Size referenceSize, Boolean ignoreDesiredSizeU, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.TreeViewItem.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.VirtualizingStackPanel.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)
+  at System.Windows.Controls.ItemsPresenter.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Grid.MeasureCell(Int32 cell, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureCellsGroup(Int32 cellsHead, Size referenceSize, Boolean ignoreDesiredSizeU, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.TreeViewItem.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.VirtualizingStackPanel.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)
+  at System.Windows.Controls.ItemsPresenter.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Grid.MeasureCell(Int32 cell, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureCellsGroup(Int32 cellsHead, Size referenceSize, Boolean ignoreDesiredSizeU, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.TreeViewItem.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.VirtualizingStackPanel.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)
+  at System.Windows.Controls.ItemsPresenter.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)
+  at System.Windows.Controls.ScrollContentPresenter.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Grid.MeasureCell(Int32 cell, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureCellsGroup(Int32 cellsHead, Size referenceSize, Boolean ignoreDesiredSizeU, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.ScrollViewer.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Border.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Control.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Grid.MeasureCell(Int32 cell, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureCellsGroup(Int32 cellsHead, Size referenceSize, Boolean ignoreDesiredSizeU, Boolean forceInfinityV)
+  at System.Windows.Controls.Grid.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)
+  at System.Windows.Controls.ContentPresenter.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Border.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.Controls.Control.MeasureOverride(Size constraint)
+  at System.Windows.FrameworkElement.MeasureCore(Size availableSize)
+  at System.Windows.UIElement.Measure(Size availableSize)
+  at System.Windows.ContextLayoutManager.UpdateLayout()
+  at System.Windows.Interop.HwndSource.Process_WM_SIZE(UIElement rootUIElement, IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam)
+  at System.Windows.Interop.HwndSource.LayoutFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)
+  at MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)
+  at MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+  at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+  at MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)
+Target: System.Windows.DependencyObject ContainerFromIndex(Int32)
+Inner exception message:
+</code></pre>
+
+<p>Note: I have had this on my machine, too, which runs a fully patched Windows 7 x64.</p> 
+
+Original Title:
+ How to debug NullReferenceException in PresentationFramework?
+
+**** Machine Generated Title (Prediction) ****:
+ wpf toolkit is not able to enable scrolling in net
+
+
+==============================================
+============== Example # 164 =================
+
+https://stackoverflow.com/questions/1269696/how-do-i-do-this-in-entity-framework-multiple-wheres-or-join
+Question Body:
+ <p>I have 2 tables that have a relation ship to each other</p>
+
+<p>Table A has 1 to many relationship with table B, so this creates a navigation property into each.</p>
+
+<p>Now I need to check a value from Table A (userName) and I need to check a value from table B (ClubId).</p>
+
+<p>So in my mind it would be something like</p>
+
+<pre><code>Join the tables together
+Where A.userName == "bob" &amp;&amp;
+where B.clubId == "Car"
+
+// return the count.
+</code></pre>
+
+<p>but now I know with Entity stuff it should make joins less common so I am wondering if I can do it with a join then.</p>
+
+<p>I tried this</p>
+
+<pre><code>int count = Entity.TableA.where(a =&gt; a.userName == "bob" &amp;&amp; a.TableB.where(i =&gt; i.ClubId == "Car")).Count();
+</code></pre>
+
+<p>so this does not work since it won't return the right type(the 2nd where). This is just how I thought along the lines how I would expect it to be done would work.</p>
+
+<p>So how should it look?</p>
+
+<p>P.S </p>
+
+<p>I rather have an example done in the Linq method queries like I did above.</p> 
+
+Original Title:
+ How do I do this in Entity Framework (multiple where's or Join)?
+
+**** Machine Generated Title (Prediction) ****:
+ how to join many to many relationships with entity framework
+
+
+==============================================
+============== Example # 765 =================
+
+https://stackoverflow.com/questions/2314829/static-method-local-variables-and-threadsafety
+Question Body:
+ <p>With normal instance methods, local variables are thread safe.</p>
+
+<p>If I have the following in a static method:</p>
+
+<pre><code>int i = 0;
+i += 3;
+</code></pre>
+
+<p>Would this be thread-safe? Is there any catch?</p>
+
+<p>Also, what exactly does it mean when each variable has its own stack? Does that mean its own stacktrace?</p>
+
+<p>Thanks</p> 
+
+Original Title:
+ Static method local variables and thread-safety
+
+**** Machine Generated Title (Prediction) ****:
+ thread safety of static methods
+
+
+==============================================
+============== Example # 569 =================
+
+https://stackoverflow.com/questions/7447836/perfile-cppflags-in-androidmk
+Question Body:
+ <p>I'm working on an Android.mk file in which, for a single module, one of the files needs different CPPFLAGS; namely, it needs -frtti enabled, while others need the Android default of -fno-rtti.</p>
+
+<p>The obvious solution was <a href="https://stackoverflow.com/q/1305665/253526">target-specific variables</a>, but oddly they do not seem to affect compilation, even with some fiddling to ensure the values should be fixed at the right time.</p>
+
+<p>Here's an extract from my Android.mk (names changed to protect me):</p>
+
+<pre><code>LOCAL_MODULE := foo_bar
+
+LOCAL_SRC_FILES := \
+    foo_bar.cpp \
+    foo_baz.cpp
+
+my_intermediates:= $(local-intermediates-dir)/foo_baz.o
+$(my_intermediates): LOCAL_CPPFLAGS := -frtti
+</code></pre>
+
+<p>I have tried simply doing <code>foo_baz.o:</code> in lieu of $(my_intermediates), and have tried substituting <code>+=</code> for <code>:=</code> to no change.</p>
+
+<p>So, is there an Android-specific way to override CPPFLAGS (or CFLAGS) for a specific source file?</p>
+
+<p>(In this case I'm using the Eclair Android sources, though it may apply to the NDK; see my answer, below.)</p> 
+
+Original Title:
+ Per-file CPPFLAGS in Android.mk
+
+**** Machine Generated Title (Prediction) ****:
+ why is my local default my own code
+
+
+==============================================
+============== Example # 559 =================
+
+https://stackoverflow.com/questions/11968183/how-to-handle-accented-characters-in-file-names-in-git-on-mac-os-x-converted-to-unicode
+Question Body:
+ <p>In my Git repository, has accented files as éíóúàèìòùãõ_800x600.jpg, but after making clone, I can not do pull, because the file appears as modified:</p>
+
+<pre><code>$git clone [...]
+done
+
+$git status
+# On branch master
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#   "a\314\201e\314\201i\314\201o\314\201u\314\201a\314\200e\314\200i\314\200o\314\200u\314\200a\314\203o\314\203_800x600.jpg"
+</code></pre>
+
+<p>Still, I can't add, remove, reset or stash the file. </p>
+
+<p>I tried:</p>
+
+<pre><code>$git add a\314\201e\314\201i\314\201o\314\201u\314\201a\314\200e\314\200i\314\200o\314\200u\314\200a\314\203o\314\203_800x600.jpg
+fatal: pathspec 'a314201e314201i314201o314201u314201a314200e314200i314200o314200u314200a314203o314203_800x600.jpg' did not match any files
+
+$git stash
+No local changes to save
+
+$git status
+# On branch master
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#   "a\314\201e\314\201i\314\201o\314\201u\314\201a\314\200e\314\200i\314\200o\314\200u\314\200a\314\203o\314\203_800x600.jpg"
+</code></pre>
+
+<p>How handle with accented files converted to unicode?</p> 
+
+Original Title:
+ How to handle accented characters in file names in Git on Mac OS X converted to unicode
+
+**** Machine Generated Title (Prediction) ****:
+ git reset hard to delete files
+
+
+==============================================
+============== Example # 336 =================
+
+https://stackoverflow.com/questions/10154622/comparing-images-with-different-resolutions
+Question Body:
+ <p>Is there possible to compare two images with different resolutions? </p>
+
+<p>I mean here some algorithmic/programming approach. For instance, now I calculate <strong>hash code from image's byte array</strong> and compare these hash code values. That is work great but fail in case of different resolutions, i.e. images are identical <strong>by eye</strong> but different in it byte content. </p>
+
+<p>For example see my image attaches:<br>
+<img src="https://i.stack.imgur.com/I2hZv.png" alt="enter image description here"><img src="https://i.stack.imgur.com/RdKg2.png" alt="enter image description here"></p>
+
+<p>one of it has <strong>72 ppi</strong> but another <strong>96 ppi</strong>. I would like to have <strong>TRUE</strong> value while comparing on equality but now I get <strong>FALSE</strong>. Help please to find correct solution here.</p> 
+
+Original Title:
+ Comparing images with different resolutions
+
+**** Machine Generated Title (Prediction) ****:
+ compare two images with different sizes
+
+
+==============================================
+============== Example # 320 =================
+
+https://stackoverflow.com/questions/3033329/why-are-python-programs-often-slower-than-the-equivalent-program-written-in-c-or-c
+Question Body:
+ <p>Why does Python seem slower, on average, than C/C++? I learned Python as my first programming language, but I've only just started with C and already I feel I can see a clear difference.</p> 
+
+Original Title:
+ Why are Python Programs often slower than the Equivalent Program Written in C or C++?
+
+**** Machine Generated Title (Prediction) ****:
+ python why does python s dict have a lot slower than others
+
+
+==============================================
+============== Example # 526 =================
+
+https://stackoverflow.com/questions/26739125/grails-command-objects-what-is-the-motivation-behind-them
+Question Body:
+ <p>While reading "The Definitive Guide To Grails", I am a little confused as to <strong>Command Objects</strong>. They seem to be a wrapper around domain classes to assist with validation but that is functionality already available in domain classes via built in constraints and further via custom validators so then what does a command object do really and what motivates us to need it? </p>
+
+<p>The book starts the discussion on command objects by stating that </p>
+
+<blockquote>
+  <p>"Sometimes a particular action doesn’t require the involvement of a
+  domain class but still requires the validation of user input."</p>
+</blockquote>
+
+<p>However, then it demonstrates the declaration of and the usage of a command object with regards to an <code>Album</code> domain class. So, it seems whatever a command object does is still closely related to domain classes. I'm sure my confusion is completely a result of my lack of understanding and so I wish to seek any clarification. Thanks.</p> 
+
+Original Title:
+ Grails Command Objects - What is the motivation behind them?
+
+**** Machine Generated Title (Prediction) ****:
+ what is the purpose of the standard library for a grails unit
+
+
+==============================================
+============== Example # 770 =================
+
+https://stackoverflow.com/questions/22400534/should-i-resize-images-for-a-mobile-site
+Question Body:
+ <p>I have a very simple question that I would like to ask those who has a much better knowledge than I do.</p>
+
+<p>The basis of the question is. When developing a mobile website. Should I dynamically resize the images that I get from external sources to be smaller. Or should I leave them as big images and handle it with css?</p>
+
+<p>The Mobile website I am building pulls a lot of images from a webservice as base 64. Now my train of thought is this. I want to keep the size of my website as small as possible, thus resizing the images to be smaller seems to be a good idea.</p>
+
+<p>On the other hand. Resizing the images with javascript, (lead developer wants everything done client side only...), might cause overhead for the user's mobile device. </p>
+
+<p>What are your opinions on this matter. Should I resize the images or not ?</p>
+
+<p>Thanks in advance for your answer.</p> 
+
+Original Title:
+ Should I resize images for a mobile site
+
+**** Machine Generated Title (Prediction) ****:
+ how to keep images after loading a website
+
+
+==============================================
+============== Example # 893 =================
+
+https://stackoverflow.com/questions/3484434/what-does-pragma-comment-mean
+Question Body:
+ <p>What does <code>#pragma comment</code> mean in the following?</p>
+
+<pre><code>#pragma comment(lib, "kernel32")
+#pragma comment(lib, "user32")
+</code></pre> 
+
+Original Title:
+ What does "#pragma comment" mean?
+
+**** Machine Generated Title (Prediction) ****:
+ what does code mean in a comment code
+
+
+==============================================
+============== Example # 166 =================
+
+https://stackoverflow.com/questions/26273448/pushing-a-navigation-controller-after-a-modal-view-controller-is-presented
+Question Body:
+ <p>I have a tab view controller which has a button like so and when it gets pressed a modal appears:</p>
+
+<pre><code>PostViewController *post = [[PostViewController alloc] init];
+
+// [self.navigationController pushViewController:post animated:YES];
+
+// Presentation
+[self presentViewController:post animated:YES completion:nil];
+</code></pre>
+
+<p>When the modal is done I want to dismiss it and push a new view controller like so:</p>
+
+<pre><code>ProfilesViewController *profile = [[ProfilesViewController alloc] init];
+[self.navigationController pushViewController:profile animated:YES];
+</code></pre>
+
+<p>But I can't do it in the post vc as its a modal. How do I do this?</p> 
+
+Original Title:
+ Pushing a navigation controller after a modal view controller is presented
+
+**** Machine Generated Title (Prediction) ****:
+ how to dismiss a modal view controller in a view controller
+
+
+==============================================
+============== Example # 198 =================
+
+https://stackoverflow.com/questions/5094908/how-does-c-link-template-instances
+Question Body:
+ <p>If I define a function (maybe a class member function but not inlined) in a header file that is included by two different translation units I get a link error since that function is multiply defined. Not so with templates since they are not compilable types until the compiler resolves a declaration of an object of a templatized type. This made me realize I don't know where compiled template code resides and how it is linked since C++ does not just create multiple copies of code to define SomeTemplateClass. Any info would be appreciated.
+Thanks!</p> 
+
+Original Title:
+ How does C++ link template instances
+
+**** Machine Generated Title (Prediction) ****:
+ c function templates
+
+
+==============================================
+============== Example # 237 =================
+
+https://stackoverflow.com/questions/11983609/how-to-fix-issue-with-datetimedatetime-which-has-no-attribute-timedelta
+Question Body:
+ <p>How will I fix this problem on Python. Here's my code:</p>
+
+<pre><code>    import time
+    import datetime
+    from time import mktime
+    from datetime import datetime
+
+    date = '20120814174530'
+    date_to_strp = time.strptime(date, '%Y%m%d%H%M%S') #convert the value of date into strptime
+    date_final = datetime.fromtimestamp(mktime(date_to_strp))
+    #convert date_to_strp so so i can use it to subtract a value from a timedelta later
+
+    date_substracted = date_final - datetime.timedelta(hours = 36)
+</code></pre>
+
+<p>this has an error:</p>
+
+<blockquote>
+  <p>type object 'datetime.datetime' has no attribute 'timedelta'</p>
+</blockquote>
+
+<p>even though I <code>import datetime</code>, I think it was overriden by <code>from datetime import datetime</code>, but when I changed the position of <code>mport datetime</code> and <code>from datetime import datetime</code>, the error is:</p>
+
+<blockquote>
+  <p>'module' object has no attribute 'fromtimestamp'</p>
+</blockquote>
+
+<p>I can fix this both error with this code:</p>
+
+<pre><code>    import time
+    from time import mktime
+    from datetime import datetime
+
+    date = '20120814174530'
+    date_to_strp = time.strptime(date, '%Y%m%d%H%M%S')
+    date_final = datetime.fromtimestamp(mktime(date_to_strp))
+
+    import datetime
+
+    date_substracted = date_final - datetime.timedelta(hours = 36)
+</code></pre>
+
+<p>Now, with this code it is functioning properly, but what I want is that all import part would be at the top as a good practice, any suggestion on how will i do that without any error with this situation or any suggestion on how will i code it in other way around.</p> 
+
+Original Title:
+ How to fix issue with 'datetime.datetime' which has no attribute timedelta?
+
+**** Machine Generated Title (Prediction) ****:
+ how to convert datetime to a datetime in python
+
+
+==============================================
+============== Example # 455 =================
+
+https://stackoverflow.com/questions/12336108/-level-entity-folder-in-symfony-
+Question Body:
+ <p>I have a two level entity folder in a Symfony2 bundle:</p>
+
+<pre><code>CommonBundle/Entity/EntityFolder1/EntityA.php
+CommonBundle/Entity/EntityFolder2
+CommonBundle/Entity/EntityFolder3
+CommonBundle/Entity/EntityFolder4
+</code></pre>
+
+<p>When I try to get the repositories for an entity that is within one of the folders:</p>
+
+<pre class="lang-php prettyprint-override"><code>$product = $this-&gt;getDoctrine()-&gt;getRepository('CommonBundle:EntityA')-&gt;find(1); 
+</code></pre>
+
+<p>Symfony doesn't recognize this <code>CommonBundle:EntityA</code>.</p>
+
+<p>I also tried with <code>CommonBundle:EntityFolder1:EntityA</code>.</p>
+
+<blockquote>
+  <p>Warning: class_parents(): Class CommonBundle\Entity\EntityA does not
+  exist and could not be loaded in</p>
+</blockquote> 
+
+Original Title:
+ 2 Level Entity Folder in Symfony 2
+
+**** Machine Generated Title (Prediction) ****:
+ symfony number entity framework number code first
+
+
+==============================================
+============== Example # 804 =================
+
+https://stackoverflow.com/questions/25674220/does-the-jersey-client-close-the-connection-on-exception
+Question Body:
+ <p>I've read the <a href="https://jersey.java.net/documentation/latest/client.html#d0e4767" rel="noreferrer">Jersey documentation</a>, and it says Jersey automatically closes a connection after an entity is read (e.g. response.readEntity(SomeObject.class))</p>
+
+<p>But when an exception is thrown, either a bad request or a socket timeout, does Jersey automatically close the connection, or should I have a finally clause that calls client.close()?</p> 
+
+Original Title:
+ Does the Jersey client close the connection on exception?
+
+**** Machine Generated Title (Prediction) ****:
+ does jersey send connection to the end of the response
+
+
+==============================================
+============== Example # 321 =================
+
+https://stackoverflow.com/questions/22011139/google-fonts-are-not-rendering-on-google-chrome
+Question Body:
+ <p>I'm building a new WordPress theme (don't know if that's relevant) and there's this issue that keeps bugging me.</p>
+
+<p>I've loaded up Roboto Slab from Google Webfonts (included the CSS in <code>&lt;head&gt;</code> section). On every other browser out there, font is rendered OK, except Google Chrome. When I first load up the website in Google Chrome, texts using that custom font are NOT displayed AT ALL (even tho font-stack has Georgia as a fallback - <code>"Roboto Slab", Georgia, serif;</code>). After I hover the styled link, or retrigger any CSS property in Inspector - texts become visible.</p>
+
+<p>Since I've started the theme some time ago, I can clearly remember that it was working perfectly before. Is this some known recent Chrome update bug? </p>
+
+<p><strong>First load</strong>:
+<a href="http://i.imgur.com/mLACSlH.jpg">a screenshot #1</a></p>
+
+<p><strong>After I reapply any of the CSS properties, get into responsive view or hover an element</strong>:
+<a href="http://i.imgur.com/tyevWVs.jpg">a screenshot #2</a></p>
+
+<p>Anyone have similar issues? How should I proceed with this?</p>
+
+<p>Thanks!</p> 
+
+Original Title:
+ Google Fonts are not rendering on Google Chrome
+
+**** Machine Generated Title (Prediction) ****:
+ google chrome showing blank font in google chrome
+
+
+==============================================
+============== Example # 889 =================
+
+https://stackoverflow.com/questions/31660345/how-to-create-a-tablayout-without-viewpager
+Question Body:
+ <p>I have created a toolbar with a tabpane(Background, TextStyle, font).
+But I followed serval tutorials on the web and all have it with viewPager/slider which i dont want. So how do I create it without implementing viewPager?</p>
+
+<p>So far I know its something to do with this:</p>
+
+<pre><code>@Override
+public void onTabSelected(TabLayout.Tab tab) {
+
+}
+</code></pre>
+
+<p><a href="https://i.stack.imgur.com/RG0BG.jpg" rel="noreferrer"><img src="https://i.stack.imgur.com/RG0BG.jpg" alt=""></a></p> 
+
+Original Title:
+ How to create a TabLayout without viewPager?
+
+**** Machine Generated Title (Prediction) ****:
+ how to create a custom font in a viewpager
+
+
+==============================================
+============== Example # 628 =================
+
+https://stackoverflow.com/questions/11517980/aspnet-mvc-dont-have-option-in-project-properties-for-ssl-enabled
+Question Body:
+ <p>I'm following the Pluralsight ASP.NET MVC 3 <a href="http://www.asp.net/mvc" rel="noreferrer">tutorial</a>, module 7 - Security (which, by the way, is a great tutorial). In the Authorization section, at the 6:24 mark, it shows how to set the project property of <code>SSL Enabled</code> to <code>true</code>. My problem is, when I get into the project properties, I do not have that option.  I only see <code>Always Start When Debugging</code>, <code>Project File</code>, and <code>Project Folder</code>. Does anyone know why I don't have the option for <code>SSL Enabled</code>, how I could make it appear, or a different way I can achieve the same result? I'm using Visual Studio 2010 SP1Rel.</p>
+
+<p>In other reading, I saw someting about the setting <code>requireSSL="true"</code> in the Web.config file, under the <code>authentication</code> tag. Does this do the same thing as setting <code>SSL Enabled = true</code> under project properties? If not, could anyone give a brief explanation of the difference or point me to a good article? Thanks.</p> 
+
+Original Title:
+ asp.net mvc 3 - don't have option in project properties for "SSL Enabled"
+
+**** Machine Generated Title (Prediction) ****:
+ how to set up an asp net mvc project with multiple links
+
+
+==============================================
+============== Example # 699 =================
+
+https://stackoverflow.com/questions/4503748/remove-everything-except-regex-match-in-vim
+Question Body:
+ <p>My specific case is a text document that contains lots of text and IPv4 addresses. I want to remove everything except for the IP addresses.</p>
+
+<p>I can use <code>:vglobal</code> to search for <code>([0-9]{1,3}\.){3}[0-9]{1,3}</code> and remove all lines without IP addresses, but after that I only know how to search for the whole line and select the matching text. Is there an easier way.</p>
+
+<p>In short, I'm looking for a way to do the following without using an external program (like grep):</p>
+
+<pre><code>grep --extended-regexp --only-matching --regexp="([0-9]{1,3}\.){3}[0-9]{1,3}"
+</code></pre>
+
+<p>Calling grep from vim may require adapting my regex (ex: removing \v). Using vim's incremental search shows me that I've got the pattern right, and I don't want to verify my regex in grep too.</p>
+
+<hr>
+
+<p><strong>Edit:</strong> Thanks to Peter, here's the function I now use. (C is the register I generally clobber in my functions.)</p>
+
+<pre><code>"" Remove all text except what matches the current search result
+"" The opposite of :%s///g (which clears all instances of the current search).
+function! ClearAllButMatches()
+    let old = @c
+    let @c=""
+    %s//\=setreg('C', submatch(0), 'l')/g
+    %d _
+    put c
+    0d _
+    let @c = old
+endfunction
+</code></pre>
+
+<p><strong>Edit2:</strong> I made it a command that accepts ranges (but defaults to whole file).</p>
+
+<pre><code>"" Remove all text except what matches the current search result. Will put each
+"" match on its own line. This is the opposite of :%s///g (which clears all
+"" instances of the current search).
+function! s:ClearAllButMatches() range
+    let is_whole_file = a:firstline == 1 &amp;&amp; a:lastline == line('$')
+
+    let old_c = @c
+
+    let @c=""
+    exec a:firstline .','. a:lastline .'sub//\=setreg("C", submatch(0), "l")/g'
+    exec a:firstline .','. a:lastline .'delete _'
+    put! c
+
+    "" I actually want the above to replace the whole selection with c, but I'll
+    "" settle for removing the blank line that's left when deleting the file
+    "" contents.
+    if is_whole_file
+        $delete _
+    endif
+
+    let @c = old_c
+endfunction
+command! -range=% ClearAllButMatches &lt;line1&gt;,&lt;line2&gt;call s:ClearAllButMatches()
+</code></pre> 
+
+Original Title:
+ Remove everything except regex match in Vim
+
+**** Machine Generated Title (Prediction) ****:
+ how to remove everything after a text field in a bash
+
+
+==============================================
+============== Example # 1 =================
+
+https://stackoverflow.com/questions/11027185/net-rc-framework-clr-windows-xp-compatibility
+Question Body:
+ <p>My question in short is: "Can .NET framework 4.5 be installed on Windows XP machines?"</p>
+
+<p>I have the following MSDN link:</p>
+
+<p><a href="http://msdn.microsoft.com/en-us/library/bb822049%28v=vs.110%29" rel="noreferrer">.NET Framework Versions and Dependencies</a></p>
+
+<blockquote>
+  <p>Each new version of the .NET Framework retains features from the previous versions and adds new features. The CLR is identified by its own version number. Some versions of the .NET Framework include a new version of the CLR, but others use an earlier version. For example, the .NET Framework 4 includes CLR 4, but the .NET Framework 3.5 includes CLR 2.0. (There was no version 3 of the CLR.) <strong>Although the .NET Framework 4.5 RC is an in-place update of the .NET Framework 4, the underlying CLR version number is 4.5.</strong>
+  ...</p>
+</blockquote>
+
+<p>The documentation goes on to say you can only install .NET Framework 4, .NET Framework 3.5 SP1, .NET Framework 2.0 SP2 on Windows XP Professional and Windows XP Home Edition (i.e no 4.5 mentioned).</p>
+
+<p>I've read in other places that .NET 4.5 can be installed on Win XP. So is this documentation just referring to 4.5RC (not the final 4.5 framework).</p>
+
+<p>My issue is, are we not able to deploy apps built on 4.5 in XP machines. Will Microsoft release a service pack? (unlikely since they don't support XP)</p>
+
+<p>p.s. a couple of interesting articles on the subject:</p>
+
+<p><a href="http://www.hanselman.com/blog/NETVersioningAndMultiTargetingNET45IsAnInplaceUpgradeToNET40.aspx" rel="noreferrer">.NET 4.5 is an in-place upgrade to .NET 4.0</a></p>
+
+<p><a href="http://msdn.microsoft.com/en-us/library/hh367887%28v=VS.110%29.aspx" rel="noreferrer">.NET 4.5 breaking changes - compatibility issues between the .NET Framework 4 and the .NET Framework 4.5 R</a></p> 
+
+Original Title:
+ .NET 4.5 RC Framework CLR - Windows XP compatibility
+
+**** Machine Generated Title (Prediction) ****:
+ why are clr clr incompatible types compatible with net framework number
+
+
+==============================================
+============== Example # 846 =================
+
+https://stackoverflow.com/questions/30683584/what-url-to-use-to-link-navigate-to-other-jsf-pages
+Question Body:
+ <p>I am confused about how to link between files in a Java Server Faces project, when some of the files are in sub-folders. (I was going to attach screenshots so you can see the Nebeans project view, and files view of the example I am trying.... but I'm not allowed to add images yet).  </p>
+
+<p>I my example project I have files called "index.xhtml" and "calculate/calculate.xhtml".  I also have a file called "template.xhtml" which is used by both.  The question is what url format to use in the template that will work for both files.</p>
+
+<p>In straight html I would just use something like the following to provide a link back to the home page that would work from any location:</p>
+
+<pre><code>&lt;a href="/index.html"&gt;Home&lt;/a&gt;
+</code></pre>
+
+<p>But I can't figure out what counts as the root folder for a JSF application, and whether to use the "project view" folder structure or the "files list" folder structure.</p> 
+
+Original Title:
+ What URL to use to link / navigate to other JSF pages
+
+**** Machine Generated Title (Prediction) ****:
+ how to use the new files in a java project
+
+
+==============================================
+============== Example # 565 =================
+
+https://stackoverflow.com/questions/18470094/how-to-shuffle-an-array
+Question Body:
+ <p>I am having a tough time trying to create a "shuffleDeck()" method.</p>
+
+<p>What I am trying to do is create a method that will take an array parameter (which will be the deck of cards) shuffle the cards, and return the shuffled array list. </p>
+
+<p>This is the code:</p>
+
+<pre><code>class Card
+{
+    int value;
+    String suit;
+    String name;
+
+    public String toString()
+    {
+        return (name + " of " + suit);
+    }
+}
+
+public class PickACard
+{
+    public static void main( String[] args)
+    {   
+        Card[] deck = buildDeck();
+        // display Deck(deck); 
+
+        int chosen = (int)(Math.random()* deck.length);
+        Card picked = deck[chosen];
+
+        System.out.println("You picked a " + picked + " out of the deck.");
+        System.out.println("In Blackjack your card is worth " + picked.value + " points.");
+
+    }
+
+    public static Card[] buildDeck()
+    {
+        String[] suits = {"clubs", "diamonds", "hearts", "spades" };
+        String[] names = {"ZERO", "ONE", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "Jack", "Queen", "King", "Ace" };
+
+        int i = 0;
+        Card[] deck = new Card[52];
+
+        for ( String s: suits )
+        {   
+            for ( int v = 2; v&lt;=14; v++)
+            {
+                Card c = new Card();
+                c.suit = s;
+                c.name = names[v];
+                if ( v == 14)
+                    c.value = 11;
+                else if ( v&gt;10)
+                    c.value = 10;
+                else
+                    c.value = v; 
+
+                deck[i] = c;
+                i++;
+            }
+        }
+        return deck; 
+    }
+
+    public static String[] shuffleDeck( Card[] deck) 
+    {
+        /** I have attempted to get two index numbers, and swap them. 
+        I tried to figure out how to loop this so it kind of simulates "shuffling". 
+        */
+    }
+
+    public static void displayDeck( Card[] deck)
+    {
+        for ( Card c: deck) 
+        {   
+            System.out.println(c.value + "\t" + c);
+        }
+    }
+}
+</code></pre> 
+
+Original Title:
+ How to "shuffle" an array?
+
+**** Machine Generated Title (Prediction) ****:
+ how to create a method that takes a long time to a
+
+
+==============================================
+============== Example # 87 =================
+
+https://stackoverflow.com/questions/15557857/how-to-kill-all-processes-that-were-opened-by-a-shell-script-upon-ctrl-c
+Question Body:
+ <p>I've got a couple python scripts which I start collectively from a shell script as follows:</p>
+
+<pre><code>#!/bin/bash
+python prog1.py &amp;
+python prog2.py &amp;
+python prog3.py 
+</code></pre>
+
+<p>Since I am developing I often want to stop these processes. I normally do so by hitting ctrl+C, but unfortuntaly a couple python programs keep (zeromq) sockets open. This means I then have to manually find them (I use <em>lsof -i</em>), and kill them using the PID.</p>
+
+<p>So I'm looking for an easier way of automatically killing those python processes from the shell when I hit ctrl+C. On <a href="https://stackoverflow.com/questions/11696691/bash-script-kill-background-grandchildren-on-ctrlc">another thread here on Stackoverflow</a> I found some code which supposedly should do what I need. I just don't understand anything about the code and how I could adjust it to my needs.</p>
+
+<p>Would anybody be so kind to help me out here?</p>
+
+<pre><code>cat &gt;work.py &lt;&lt;'EOF'
+import sys, time, signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+for i in range(10):
+    time.sleep(1)
+    print "Tick from", sys.argv[1]
+EOF 
+chmod +x work.py
+
+function process {
+    python ./work.py $1
+}
+
+process one &amp;
+wait $!
+echo "All done!"
+</code></pre> 
+
+Original Title:
+ How to kill all processes that were opened by a shell script upon ctrl + C?
+
+**** Machine Generated Title (Prediction) ****:
+ how to stop python from running processes in a shell script
+
+
+==============================================
+============== Example # 576 =================
+
+https://stackoverflow.com/questions/20045622/php-recursivedirectoryiterator
+Question Body:
+ <p>I want to do a RecursiveDirectoryIterator on a set of folders in a directory, say <code>./temp</code> and then list the files in each folder according to the name of the folder. </p>
+
+<p>For example I have the folders <code>A</code> and <code>B</code>. </p>
+
+<p>In A, I have a list of files say, <code>1.txt</code>, <code>2.php</code>, <code>2.pdf</code>, <code>3.doc</code>, <code>3.pdf</code>.</p>
+
+<p>In B, I have <code>1.pdf</code>, <code>1.jpg</code>, <code>2.png</code>.</p>
+
+<p>I want my results to be like this:</p>
+
+<pre><code>A =&gt; List of files in A
+B =&gt; List of files in B
+</code></pre>
+
+<p>How can this be done?</p>
+
+<pre><code>&lt;?php 
+$scan_it = new RecursiveDirectoryIterator("./temp"); 
+foreach(new RecursiveIteratorIterator($scan_it) as $file =&gt;$key) { 
+    $filetypes = array("pdf"); 
+    $filetype = pathinfo($file, PATHINFO_EXTENSION); 
+    if (in_array(strtolower($filetype), $filetypes)) { 
+        $dlist=basename($file); //sort 
+?&gt; 
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;?php echo substr(dirname($file),11);?&gt;
+    &lt;/li&gt; 
+    &lt;li&gt;
+        &lt;a href="&lt;?php echo $file;?&gt;"&gt;&lt;?php echo basename($file);?&gt;&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt; 
+&lt;?php 
+    }} 
+?&gt;
+</code></pre> 
+
+Original Title:
+ PHP RecursiveDirectoryIterator
+
+**** Machine Generated Title (Prediction) ****:
+ how to set a directory in a directory list in r
+
+
+==============================================
+============== Example # 276 =================
+
+https://stackoverflow.com/questions/16686488/java-what-is-an-instance-variable
+Question Body:
+ <p>My assignment is to make a program with an instance variable, a String, that should be inputed by user. But I don't even know what an instance variable is. What is an instance variable? How do I create one? What does it do?</p> 
+
+Original Title:
+ Java -What is an instance variable?
+
+**** Machine Generated Title (Prediction) ****:
+ what is a good way to create a instance variable
+
+
+==============================================
+============== Example # 148 =================
+
+https://stackoverflow.com/questions/19513533/secured-area-with-locale
+Question Body:
+ <p>How can I secure actions with locale - this was pretty easy in symfony1.4. I use now symfony2.3:</p>
+
+<p>My security.yml:</p>
+
+<pre><code>firewalls:
+    dev:
+        pattern:  ^/(_(profiler|wdt)|css|images|js)/
+        security: false
+
+    login:
+        pattern:  frontend_account_login
+        security: false
+
+
+    secured_area:
+        pattern:    ^/
+        anonymous: ~
+        http_basic:
+            realm: "Secured Demo Area"
+        form_login:
+            check_path: frontend_account_security_check
+            login_path: frontend_account_login
+            use_referer:        true
+            default_target_path: frontend_account_hello
+        logout:
+            path:   /logout
+            target: frontend_account_login            #anonymous: ~
+        #http_basic:
+        #    realm: "Secured Demo Area"
+
+access_control:
+    #This works:
+    - { path: ^/de/account/secured/, roles: ROLE_ADMIN }
+    - { path: ^/en/account/secured/, roles: ROLE_ADMIN } 
+    #I want it kind of that way
+    - { path: ^/{_locale}/account/secured/, roles: ROLE_ADMIN }
+</code></pre>
+
+<p>I read a post with regex: ^/[a-z]+/account/secured/. But it doesn't work. Any idea how I can secure areas with locale. I found some posts here but they all don't work.</p>
+
+<p>Thanks!!!</p> 
+
+Original Title:
+ Secured area with locale
+
+**** Machine Generated Title (Prediction) ****:
+ how to configure devise for secure with rails
+
+
+==============================================
+============== Example # 255 =================
+
+https://stackoverflow.com/questions/1954443/ipv-multicast-addresses-is-the-group-id-field-effectively-bits-or-bits
+Question Body:
+ <p>I'm trying to understand the rules for choosing an IPv6 multicast address Group ID, and the RFC seems somewhat inconsistent.  For example, in <a href="http://tools.ietf.org/html/rfc2373#section-2.7" rel="noreferrer">RFC 2373</a> section 2.7 this diagram is shown:</p>
+
+<pre><code>|   8    |  4 |  4 |                  112 bits                   |
++------ -+----+----+---------------------------------------------+
+|11111111|flgs|scop|                  group ID                   |
++--------+----+----+---------------------------------------------+
+</code></pre>
+
+<p>... but then in section 2.7.2 it shows this:</p>
+
+<pre><code>|   8    |  4 |  4 |          80 bits          |     32 bits     |
++------ -+----+----+---------------------------+-----------------+
+|11111111|flgs|scop|   reserved must be zero   |    group ID     |
++--------+----+----+---------------------------+-----------------+
+</code></pre>
+
+<p>So my question is, are the upper 80 bits of the Group ID field usable or not?  If they are usable, is it only under certain circumstances (e.g. when using non-Ethernet networking technology?)  What problems should I expect to experience if I set these bits when multicasting over an Ethernet LAN?</p> 
+
+Original Title:
+ IPv6 multicast addresses: Is the Group ID field effectively 112 bits or 32 bits?
+
+**** Machine Generated Title (Prediction) ****:
+ what is the purpose of the multicast ip address
+
+
+==============================================
+============== Example # 237 =================
+
+https://stackoverflow.com/questions/11983609/how-to-fix-issue-with-datetimedatetime-which-has-no-attribute-timedelta
+Question Body:
+ <p>How will I fix this problem on Python. Here's my code:</p>
+
+<pre><code>    import time
+    import datetime
+    from time import mktime
+    from datetime import datetime
+
+    date = '20120814174530'
+    date_to_strp = time.strptime(date, '%Y%m%d%H%M%S') #convert the value of date into strptime
+    date_final = datetime.fromtimestamp(mktime(date_to_strp))
+    #convert date_to_strp so so i can use it to subtract a value from a timedelta later
+
+    date_substracted = date_final - datetime.timedelta(hours = 36)
+</code></pre>
+
+<p>this has an error:</p>
+
+<blockquote>
+  <p>type object 'datetime.datetime' has no attribute 'timedelta'</p>
+</blockquote>
+
+<p>even though I <code>import datetime</code>, I think it was overriden by <code>from datetime import datetime</code>, but when I changed the position of <code>mport datetime</code> and <code>from datetime import datetime</code>, the error is:</p>
+
+<blockquote>
+  <p>'module' object has no attribute 'fromtimestamp'</p>
+</blockquote>
+
+<p>I can fix this both error with this code:</p>
+
+<pre><code>    import time
+    from time import mktime
+    from datetime import datetime
+
+    date = '20120814174530'
+    date_to_strp = time.strptime(date, '%Y%m%d%H%M%S')
+    date_final = datetime.fromtimestamp(mktime(date_to_strp))
+
+    import datetime
+
+    date_substracted = date_final - datetime.timedelta(hours = 36)
+</code></pre>
+
+<p>Now, with this code it is functioning properly, but what I want is that all import part would be at the top as a good practice, any suggestion on how will i do that without any error with this situation or any suggestion on how will i code it in other way around.</p> 
+
+Original Title:
+ How to fix issue with 'datetime.datetime' which has no attribute timedelta?
+
+**** Machine Generated Title (Prediction) ****:
+ how to convert datetime to a datetime in python
+
+
+==============================================
+============== Example # 366 =================
+
+https://stackoverflow.com/questions/2828942/how-to-draw-scrollbars-on-wpf-canvas
+Question Body:
+ <p>I am trying to create a canvas with scroll bars.
+Can anyone help me give some ideas on how to do this?
+I have already tried using grid of 1 row and 1 column but due to certain constraints I want to use canvas.</p>
+
+<p>Thanks in advance!</p> 
+
+Original Title:
+ How to draw scrollbars on WPF Canvas
+
+**** Machine Generated Title (Prediction) ****:
+ how to scroll to canvas in a canvas
+
+
+==============================================
+============== Example # 58 =================
+
+https://stackoverflow.com/questions/26711383/getting-one-value-from-sql-select-statement-in-java
+Question Body:
+ <p>I'm trying to return a value from a select statement. Its only one value because the value I'm returning is from the primary key column. </p>
+
+<p>The SQL statement is <code>SELECT itemNo FROM item WHERE itemName = 'astringvalue';</code></p>
+
+<p>My method for getting the value looks like this:</p>
+
+<pre><code>private String viewValue(Connection con, String command) throws SQLException 
+    {
+        String value = null;
+        Statement stmt = null;
+
+        try 
+        {
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(command);
+
+            while (rs.next())
+                value = rs.toString();
+        } 
+
+        catch (SQLException e ) 
+        {
+            e.printStackTrace();
+        } 
+
+        finally
+        {
+            if (stmt != 
+            null) { stmt.close(); }
+        }
+
+        return value;
+
+    }
+</code></pre>
+
+<p>I do have a <code>getConnection()</code> method too.</p>
+
+<p>Here is what im using to call the <code>viewValue</code>method:</p>
+
+<pre><code>if((action.getSource() == btnSave) ||(action.getSource() == btnSavePrint) )
+        {
+            String findItemNoCommand = "SELECT itemNo FROM `item` WHERE itemName = '" + itemList.getSelectedItem() + "'";
+
+            try 
+            {
+                itemNo = viewValue(conn, findItemNoCommand);
+            }
+            catch (SQLException e) 
+            {
+                e.printStackTrace();
+            }
+
+            System.out.println(itemNo);
+        }
+</code></pre>
+
+<p>The code above was written for a <code>ButtonHandler</code></p>
+
+<p>Right now, for the <code>println</code> I'm getting a "<code>com.mysql.jdbc.JDBC4ResultSet@1e72cae</code>" .. I don't understand how it is so.. but I'm assuming that ResultSet is the wrong choice here. </p>
+
+<p>My question is.. what can i use there that can work?</p>
+
+<p>Any help or clue as to what im doing wrong is much appreciated. </p> 
+
+Original Title:
+ Getting one value from SQL select statement in Java
+
+**** Machine Generated Title (Prediction) ****:
+ return value from a select statement
+
+
+==============================================
+============== Example # 248 =================
+
+https://stackoverflow.com/questions/117589/iis-css-caching
+Question Body:
+ <p>When we are developing new sites or testing changes in new ones that involve css after the new code is committed and someone goes to check the changes they always see a cached version of the old css. This is causing a lot of problems in testing because people never are sure if they have the latest css on screen (I know shift and clicking refresh clears this cache but I can't expect end users to know to do this). What are my possible solutions?</p> 
+
+Original Title:
+ IIS CSS Caching
+
+**** Machine Generated Title (Prediction) ****:
+ how to keep track of the cache control
+
+
+==============================================
+============== Example # 367 =================
+
+https://stackoverflow.com/questions/318888/solving-who-owns-the-zebra-programmatically
+Question Body:
+ <p>Edit: this puzzle is also known as "Einstein's Riddle"</p>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Zebra_Puzzle" rel="nofollow noreferrer">Who owns the Zebra</a> (you can <a href="https://www.brainzilla.com/logic/zebra/einsteins-riddle/" rel="nofollow noreferrer" title="Einstein&#39;s Riddle">try the online version here</a>) is an example of a classic set of puzzles and I bet that most people on Stack Overflow can solve it with pen and paper. But what would a programmatic solution look like?</p>
+
+<p>Based on the clues listed below...</p>
+
+<ul>
+<li>There are five houses.</li>
+<li>Each house has its own unique color.</li>
+<li>All house owners are of different nationalities.</li>
+<li>They all have different pets.</li>
+<li>They all drink different drinks.</li>
+<li>They all smoke different cigarettes.</li>
+<li>The English man lives in the red house.</li>
+<li>The Swede has a dog.</li>
+<li>The Dane drinks tea.</li>
+<li>The green house is on the left side of the white house.</li>
+<li>They drink coffee in the green house.</li>
+<li>The man who smokes Pall Mall has birds.</li>
+<li>In the yellow house they smoke Dunhill.</li>
+<li>In the middle house they drink milk.</li>
+<li>The Norwegian lives in the first house.</li>
+<li>The man who smokes Blend lives in the house next to the house with cats.</li>
+<li>In the house next to the house where they have a horse, they smoke Dunhill.</li>
+<li>The man who smokes Blue Master drinks beer.</li>
+<li>The German smokes Prince.</li>
+<li>The Norwegian lives next to the blue house.</li>
+<li>They drink water in the house next to the house where they smoke Blend. </li>
+</ul>
+
+<p>...who owns the Zebra?</p> 
+
+Original Title:
+ Solving "Who owns the Zebra" programmatically?
+
+**** Machine Generated Title (Prediction) ****:
+ how to fix this bug in chrome
+
+
+==============================================
+============== Example # 874 =================
+
+https://stackoverflow.com/questions/4204669/aspnet-mvc-rc-razor-views-syntax-for-embedding-code-inside-javascript-block
+Question Body:
+ <p>Having trouble embedding c# code inside a javascript block with <strong>MVC3 RC1</strong> razor view. What syntax should I use to make this working? I get warnings eg. Expected constant on the isOk variable among other. (Without text tag, the following code is not recognized as javascript)</p>
+
+<pre><code>@{bool isOk = true;}
+
+&lt;script type="text/javascript"&gt;
+    var tmp1 = "";
+    @if (isOk)
+    { 
+        &lt;text&gt;
+            var tmp=""; // this should be interpreted as javascript
+        &lt;/text&gt;       
+    }
+&lt;/script&gt;
+</code></pre> 
+
+Original Title:
+ Asp.Net MVC3 RC Razor views : syntax for embedding code inside <javascript> block
+
+**** Machine Generated Title (Prediction) ****:
+ how to make a javascript compiler that can be used to pass
+
+
+==============================================
+============== Example # 496 =================
+
+https://stackoverflow.com/questions/46203001/aspnet-core-integration-test-returning-
+Question Body:
+ <p>I'm trying to implement the integration test for my app following the tutorial from: <a href="https://docs.microsoft.com/en-us/aspnet/core/testing/integration-testing" rel="nofollow noreferrer">https://docs.microsoft.com/en-us/aspnet/core/testing/integration-testing</a></p>
+
+<pre><code>public class CreditCardApplicationShould
+{
+    [Fact]
+    public async Task RenderApplicationForm()
+    {
+        var builder = new WebHostBuilder()
+            .UseContentRoot(@"C:\Users\usuario\source\repos\CreditCardApp\CreditCardApp")
+            .UseEnvironment("Development")
+            .UseStartup&lt;CreditCardApp.Startup&gt;()
+            .UseApplicationInsights();
+
+        var server = new TestServer(builder);
+
+        var client = server.CreateClient();
+
+        var response = await client.GetAsync("/Apply/Index");
+
+        response.EnsureSuccessStatusCode();
+
+        var responseString = await response.Content.ReadAsStringAsync();
+
+        Assert.Contains("New Credit Card Application", responseString);
+    }
+}
+</code></pre>
+
+<p>However, when I'm trying to run the integration test, it gives me the following error:</p>
+
+<blockquote>
+  <p>"Message: System.InvalidOperationException : The view 'Index' was not
+  found. The following locations were searched:
+  /Views/Apply/Index.cshtml /Views/Shared/Index.cshtml"</p>
+</blockquote>
+
+<p>It seems to be a common problem when separating the integration test from the MVC application.</p>
+
+<p>Here's the startup.cs too</p>
+
+<pre><code>public class Startup
+{
+    public Startup(IHostingEnvironment env)
+    {
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(env.ContentRootPath)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+            .AddEnvironmentVariables();
+
+        Configuration = builder.Build();
+        CurrentEnvironment = env;
+    }
+
+    public IConfiguration Configuration { get; }
+
+    private IHostingEnvironment CurrentEnvironment { get;  }
+
+    // This method gets called by the runtime. Use this method to add services to the container.
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddMvc().AddApplicationPart(typeof(ApplyController).GetTypeInfo().Assembly);
+    }
+
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        if (env.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+            app.UseBrowserLink();
+        }
+        else
+        {
+            app.UseExceptionHandler("/Home/Error");
+        }
+
+        app.UseStaticFiles();
+
+        app.UseMvc(routes =&gt;
+        {
+            routes.MapRoute(
+                name: "default",
+                template: "{controller=Home}/{action=Index}/{id?}");
+        });
+    }
+}
+</code></pre>
+
+<p>I've found some work arounds, that says to include the AddApplicationPart in the Startup.cs, but it's still not working.</p>
+
+<p>I'm not sure if it's not working because I'm using .NET Core 2.0. I appreciate any tips.</p> 
+
+Original Title:
+ aspnet core integration test returning 404
+
+**** Machine Generated Title (Prediction) ****:
+ integration testing in spring integration test
+
+
+==============================================
+============== Example # 358 =================
+
+https://stackoverflow.com/questions/24265021/sublime-text-view-findsearch-history
+Question Body:
+ <p>Is there a way to view the find/search history in Sublime Text 2?</p>
+
+<p>In eclipse there is such a feature, see screenshot below. I'd expect something similar in sublime text 2.</p>
+
+<p><img src="https://i.stack.imgur.com/htpof.png" alt="eclipse &quot;show previous searches&quot; feature"></p> 
+
+Original Title:
+ sublime text 2: view find/search history
+
+**** Machine Generated Title (Prediction) ****:
+ sublime text search
+
+
+==============================================
+============== Example # 425 =================
+
+https://stackoverflow.com/questions/3276240/tools-for-analyzing-performance-of-a-haskell-program
+Question Body:
+ <p>While solving some Project Euler Problems to learn Haskell (so currently I'm a completly beginner) I came over <a href="http://projecteuler.net/index.php?section=problems&amp;id=12" rel="noreferrer">Problem 13</a>. I wrote this (naive) solution:</p>
+
+<pre><code>--Get Number of Divisors of n
+numDivs :: Integer -&gt; Integer
+numDivs n = toInteger $ length [ x | x&lt;-[2.. ((n `quot` 2)+1)], n `rem` x == 0] + 2
+
+--Generate a List of Triangular Values
+triaList :: [Integer]
+triaList =  [foldr (+) 0 [1..n] | n &lt;- [1..]]
+
+--The same recursive
+triaList2 = go 0 1
+  where go cs n = (cs+n):go (cs+n) (n+1)
+
+--Finds the first triangular Value with more than n Divisors
+sol :: Integer -&gt; Integer
+sol n = head $ filter (\x -&gt; numDivs(x)&gt;n) triaList2
+</code></pre>
+
+<p>This Solution for n=500 (sol 500) is extremly slow (running for more than 2 hours now), so I wondered how to find out why this solution is so slow. Are there any commands that tell me where most of the computation-time is spend so I know which part of my haskell-program is slow? Something like a simple profiler.</p>
+
+<p>To make it clear, i'm not asking <strong>for</strong> a faster solution but for <strong>a way</strong> to find this solution. How would you start if you would have no haskell knowledge?</p>
+
+<p>I tried to write two triaList functions but found no way to test which one is faster, so thats where my problems start.</p>
+
+<p>Thanks</p> 
+
+Original Title:
+ Tools for analyzing performance of a Haskell program
+
+**** Machine Generated Title (Prediction) ****:
+ haskell io syntax for loop
+
+
+==============================================
+============== Example # 143 =================
+
+https://stackoverflow.com/questions/25135897/how-to-automatically-start-a-service-when-running-a-docker-container
+Question Body:
+ <p>I have a <a href="https://github.com/larazest/db/blob/master/Dockerfile">Dockerfile</a> to install MySQL server in a container, which I then start like this:</p>
+
+<pre><code>sudo docker run -t -i 09d18b9a12be /bin/bash
+</code></pre>
+
+<p>But the MySQL service does not start automatically, I have to manually run (from within the container):</p>
+
+<pre><code>service mysql start
+</code></pre>
+
+<p>How do I automatically start the MySQL service when I run the docker container?</p> 
+
+Original Title:
+ How to automatically start a service when running a docker container?
+
+**** Machine Generated Title (Prediction) ****:
+ how to automatically start a docker container service
+
+
+==============================================
+============== Example # 38 =================
+
+https://stackoverflow.com/questions/3387269/convert-int-to-stdstring
+Question Body:
+ <blockquote>
+  <p><strong>Possible Duplicate:</strong><br>
+  <a href="https://stackoverflow.com/questions/893670/int-to-stdstring">int to std::string?</a>  </p>
+</blockquote>
+
+
+
+<p>How can you convert int to std::string?</p> 
+
+Original Title:
+ convert int to std::string
+
+**** Machine Generated Title (Prediction) ****:
+ how to convert a string to std string
+
+
+==============================================
+============== Example # 418 =================
+
+https://stackoverflow.com/questions/4233816/what-are-mysql-database-engines
+Question Body:
+ <p>I looked around and found some of the MySQL engines are innodb and MyISAM. Perhaps there are few more. My question is what are these database engines?</p>
+
+<p>What are the differences between different MySQL engines? And more importantly, How do I decide which one to use?</p> 
+
+Original Title:
+ What are MySQL database engines?
+
+**** Machine Generated Title (Prediction) ****:
+ what are the differences between mysql and mysql
+
+
+==============================================
+============== Example # 806 =================
+
+https://stackoverflow.com/questions/34549044/why-are-detected-cli-options-different-when-using-defaultparser-instead-of-gnuparser
+Question Body:
+ <p>I'm about to migrate some legacy code to contain less deprecated warnings from <em>3rd</em>-party libraries. For Apache <code>commons-cli</code> library (version: <strong>1.3.1</strong>) I detected in the <a href="https://commons.apache.org/proper/commons-cli/apidocs/org/apache/commons/cli/GnuParser.html" rel="nofollow">official JavaDoc</a> that <code>GnuParser</code> is deprecated and <code>DefaultParser</code> should be used instead:</p>
+
+<blockquote>
+  <p>@deprecated since 1.3, use the <code>{@link DefaultParser}</code> instead</p>
+</blockquote>
+
+<p>However, the following code snippet stops working as expected:</p>
+
+<pre><code>Options options = new Options();    
+Option optionGSTypes = new Option(
+        "gst","gs-types", true,
+        "the supported types, comma-separated: article, category, template, all");
+optionGSTypes.setArgs(3);
+optionGSTypes.setValueSeparator(',');
+options.addOption(optionGSTypes);
+
+// ... other options
+
+// parsed option values are correct, yet this is deprecated
+CommandLineParser parser = new GnuParser(); 
+CommandLine commands = parser.parse(options, args);
+
+// ... interpret parsed 'commands' and related actual values via CLI
+</code></pre>
+
+<p>Note that <code>setValueSeparator(',')</code> is used here to define a custom separator char <code>,</code> to enable the CLI to support sevaral <em>gst</em>-types (see code snippet).</p>
+
+<p>As input the following program arguments are used to call the CLI: </p>
+
+<p><code>java -jar MyCLI.jar -gst category -gsd 4</code></p>
+
+<p>Obviously, several other arguments might also have been added after the gsd parameter. The expected and <em>correctly</em> parsed options  for the separator-less use of the "gst" argument are (via <code>GnuParser</code>): </p>
+
+<ol>
+<li>"category" (and nothing else)</li>
+</ol>
+
+<p>However, when I change my code and switch towards the recommended parser via:</p>
+
+<pre><code>CommandLineParser parser = new DefaultParser();
+</code></pre>
+
+<p>the resulting, parsed values are detected <em>incorrectly</em> as:</p>
+
+<ol>
+<li>"category"</li>
+<li>"-gsd"</li>
+<li>"4"</li>
+</ol>
+
+<p>Hint: I used a debugger to verify the incorrect result of the parse process via inspecting the field <code>values</code> in <code>org.apache.commons.cli.Option</code> via the returned <code>commands</code> variable.</p>
+
+<p>My expectation would be that the internal change of the parser should <strong>not</strong> yield different results, as this breaks existing code. Has anyone ever encountered the same behavior with Apache Commons-CLI when switching to <code>DefaultParser</code> and several option values and custom separators?</p>
+
+<p>Is there a difference in the construction/usage of <code>DefaultParser</code> that I might have overseen?</p> 
+
+Original Title:
+ Why are detected CLI options different when using DefaultParser instead of GnuParser?
+
+**** Machine Generated Title (Prediction) ****:
+ how to use deprecated in favor of code
+
+
+==============================================
+============== Example # 93 =================
+
+https://stackoverflow.com/questions/2458355/giving-users-a-reputation-system-should-i
+Question Body:
+ <p>I'm thinking of adding a reputation system to my Django web application; the site is already being used so I'm trying to be careful about my choices.</p>
+
+<p>Reputation is generated in all actions that contribute to the site, similar to Stackoverflow's system.</p>
+
+<p>I know there are literally millions of ways of implementing this, and this is why I feel quite lost.</p>
+
+<p>Two alternatives I am not sure about are:</p>
+
+<ul>
+<li>Keep track of reasons why reputation was incremented</li>
+<li>Ignore reasons in order to reduce complexity of the site and overhead</li>
+</ul>
+
+<hr>
+
+<p>Would be happy with a few pointers, and directions. Would be very much appreciated!</p> 
+
+Original Title:
+ Giving users a "reputation system" - Should I...?
+
+**** Machine Generated Title (Prediction) ****:
+ why is my django site s wrong when trying to use a
+
+
+==============================================
+============== Example # 313 =================
+
+https://stackoverflow.com/questions/25420861/aws-emr-and-spark-
+Question Body:
+ <p>I've been running into some issues recently while trying to use Spark on an AWS EMR cluster.</p>
+
+<p>I am creating the cluster using something like : </p>
+
+<pre><code>./elastic-mapreduce --create --alive \
+--name "ll_Spark_Cluster" \
+--bootstrap-action s3://elasticmapreduce/samples/spark/1.0.0/install-spark-shark.rb \
+--bootstrap-name "Spark/Shark" \
+--instance-type m1.xlarge \
+--instance-count 2 \
+--ami-version 3.0.4
+</code></pre>
+
+<p>The issue is that whenever I try to get data from S3 I get an exception.
+So if I start the spark-shell and try something like :</p>
+
+<pre><code>val data = sc.textFile("s3n://your_s3_data")
+</code></pre>
+
+<p>I get the following exception :</p>
+
+<pre><code>WARN storage.BlockManager: Putting block broadcast_1 failed
+java.lang.NoSuchMethodError:
+com.google.common.hash.HashFunction.hashInt(I)Lcom/google/common/hash/HashCode;
+</code></pre> 
+
+Original Title:
+ AWS EMR and Spark 1.0.0
+
+**** Machine Generated Title (Prediction) ****:
+ spark emr and emr
+
+
+==============================================
+============== Example # 475 =================
+
+https://stackoverflow.com/questions/26827809/app-rejection-crash-report-says-failed-to-scenecreate-in-time-badfd-what-is-wrong
+Question Body:
+ <p>my app just got rejected by apple, and I could use some help to figure out what is wrong. The app works fine on all my devices and does not crash. The app synchronizes with iCloud right when it launches. This works fine on my devices, but maybe something is up with that. </p>
+
+<p>Here is the first crash report (symbolicated): </p>
+
+<pre><code>Exception Type:  00000020
+Exception Codes: 0x000000008badf00d
+Highlighted Thread:  0
+
+Application Specific Information:
+com.Name.App failed to scene-create in time
+
+Elapsed total CPU time (seconds): 9.250 (user 9.250, system 0.000), 23% CPU 
+Elapsed application CPU time (seconds): 0.298, 1% CPU
+
+Thread 0 name:  Dispatch queue: com.apple.main-thread
+Thread 0:
+0   libsystem_kernel.dylib          0x0000000192f7ceb8 semaphore_wait_trap + 8
+1   libsystem_platform.dylib        0x00000001930299e0 _os_semaphore_wait + 20
+2   libdispatch.dylib               0x0000000192e5e3e0 _dispatch_barrier_sync_f_slow + 516
+3   Foundation                      0x0000000182aedccc -[NSUbiquitousKeyValueStore _synchronizeForced:notificationQueue:] + 248
+4   Foundation                      0x0000000182aedb50 -[NSUbiquitousKeyValueStore synchronize] + 88
+5   Cloud-Fryser                    0x00000001000dab08 0x1000d0000 + 43784
+6   UIKit                           0x000000018645ce80 -[UIViewController loadViewIfRequired] + 688
+7   UIKit                           0x0000000186512374 -[UINavigationController _layoutViewController:] + 60
+8   UIKit                           0x0000000186512270 -[UINavigationController _updateScrollViewFromViewController:toViewController:] + 244
+9   UIKit                           0x000000018651170c -[UINavigationController _startTransition:fromViewController:toViewController:] + 108
+10  UIKit                           0x00000001865113b8 -[UINavigationController _startDeferredTransitionIfNeeded:] + 636
+11  UIKit                           0x00000001865110d8 -[UINavigationController __viewWillLayoutSubviews] + 52
+12  UIKit                           0x0000000186511058 -[UILayoutContainerView layoutSubviews] + 196
+13  UIKit                           0x0000000186459a28 -[UIView(CALayerDelegate) layoutSublayersOfLayer:] + 568
+14  QuartzCore                      0x0000000185db1990 -[CALayer layoutSublayers] + 164
+15  QuartzCore                      0x0000000185dac560 CA::Layer::layout_if_needed(CA::Transaction*) + 316
+16  QuartzCore                      0x0000000185dac404 CA::Layer::layout_and_display_if_needed(CA::Transaction*) + 28
+17  QuartzCore                      0x0000000185dabc04 CA::Context::commit_transaction(CA::Transaction*) + 272
+18  QuartzCore                      0x0000000185dab988 CA::Transaction::commit() + 432
+19  UIKit                           0x00000001866e7014 -[UIApplication _reportMainSceneUpdateFinished:] + 56
+20  UIKit                           0x00000001866e7ec0 -[UIApplication _runWithMainScene:transitionContext:completion:] + 2776
+21  UIKit                           0x00000001866e6044 -[UIApplication workspaceDidEndTransaction:] + 180
+22  FrontBoardServices              0x0000000189edd63c __31-[FBSSerialQueue performAsync:]_block_invoke + 24
+23  CoreFoundation                  0x0000000181c66120 __CFRUNLOOP_IS_CALLING_OUT_TO_A_BLOCK__ + 16
+24  CoreFoundation                  0x0000000181c65228 __CFRunLoopDoBlocks + 308
+25  CoreFoundation                  0x0000000181c63428 __CFRunLoopRun + 692
+26  CoreFoundation                  0x0000000181b911f0 CFRunLoopRunSpecific + 392
+27  UIKit                           0x00000001864c7788 -[UIApplication _run] + 548
+28  UIKit                           0x00000001864c2780 UIApplicationMain + 1484
+29  Cloud-Fryser                    0x00000001000dc878 0x1000d0000 + 51320
+30  libdyld.dylib                   0x0000000192e7ea04 start + 0
+
+Thread 1 name:  Dispatch queue: com.apple.libdispatch-manager
+Thread 1:
+0   libsystem_kernel.dylib          0x0000000192f7cc94 kevent64 + 8
+1   libdispatch.dylib               0x0000000192e6497c _dispatch_mgr_invoke + 272
+2   libdispatch.dylib               0x0000000192e573b0 _dispatch_mgr_thread + 48
+
+Thread 2 name:  Dispatch queue: com.apple.sydprotection
+Thread 2:
+0   libsystem_kernel.dylib          0x0000000192f96e50 __open + 8
+1   libsystem_kernel.dylib          0x0000000192f95dbc open + 12
+2   Foundation                      0x0000000182ab1ebc _NSReadBytesFromFileWithExtendedAttributes + 132
+3   Foundation                      0x0000000182ab1ddc -[NSData(NSData) initWithContentsOfFile:] + 76
+4   Foundation                      0x0000000182ad87fc -[NSData(NSData) initWithContentsOfURL:] + 384
+5   Foundation                      0x0000000182ab1cf0 +[NSDictionary(NSDictionary) newWithContentsOf:immutable:] + 112
+6   SyncedDefaults                  0x000000018dbab224 -[SYDRemotePreferencesSource _cachePlistFromDisk] + 104
+7   SyncedDefaults                  0x000000018dbabedc -[SYDRemotePreferencesSource _synchronizeForced:] + 160
+8   SyncedDefaults                  0x000000018dbabdac __48-[SYDRemotePreferencesSource synchronizeForced:]_block_invoke + 36
+9   libdispatch.dylib               0x0000000192e55368 _dispatch_client_callout + 12
+10  libdispatch.dylib               0x0000000192e5e6e4 _dispatch_barrier_sync_f_invoke + 72
+11  SyncedDefaults                  0x000000018dbabd5c -[SYDRemotePreferencesSource synchronizeForced:] + 116
+12  Foundation                      0x0000000182aecc74 -[NSUbiquitousKeyValueStore synchronizeWithSourceForced:] + 32
+13  Foundation                      0x0000000182aecbe0 __46-[NSUbiquitousKeyValueStore _registerToDaemon]_block_invoke + 72
+14  libdispatch.dylib               0x0000000192e553a8 _dispatch_call_block_and_release + 20
+15  libdispatch.dylib               0x0000000192e55368 _dispatch_client_callout + 12
+16  libdispatch.dylib               0x0000000192e5f4bc _dispatch_queue_drain + 1212
+17  libdispatch.dylib               0x0000000192e58470 _dispatch_queue_invoke + 128
+18  libdispatch.dylib               0x0000000192e61220 _dispatch_root_queue_drain + 660
+19  libdispatch.dylib               0x0000000192e62758 _dispatch_worker_thread3 + 104
+20  libsystem_pthread.dylib         0x00000001930312e0 _pthread_wqthread + 812
+21  libsystem_pthread.dylib         0x0000000193030fa4 start_wqthread + 0
+
+Thread 3:
+0   libsystem_kernel.dylib          0x0000000192f97c78 __workq_kernreturn + 8
+1   libsystem_pthread.dylib         0x0000000193031390 _pthread_wqthread + 988
+2   libsystem_pthread.dylib         0x0000000193030fa4 start_wqthread + 0
+
+Thread 4:
+0   libsystem_kernel.dylib          0x0000000192f97c78 __workq_kernreturn + 8
+1   libsystem_pthread.dylib         0x0000000193031390 _pthread_wqthread + 988
+2   libsystem_pthread.dylib         0x0000000193030fa4 start_wqthread + 0
+
+Thread 5:
+0   libsystem_kernel.dylib          0x0000000192f7ce7c mach_msg_trap + 8
+1   libsystem_kernel.dylib          0x0000000192f7ccf4 mach_msg + 68
+2   CoreFoundation                  0x0000000181c655c8 __CFRunLoopServiceMachPort + 196
+3   CoreFoundation                  0x0000000181c6351c __CFRunLoopRun + 936
+4   CoreFoundation                  0x0000000181b911f0 CFRunLoopRunSpecific + 392
+5   CoreFoundation                  0x0000000181be32a8 CFRunLoopRun + 108
+6   CoreMotion                      0x000000018258a9d4 0x182548000 + 272852
+7   libsystem_pthread.dylib         0x0000000193033e7c _pthread_body + 160
+8   libsystem_pthread.dylib         0x0000000193033dd8 _pthread_start + 156
+9   libsystem_pthread.dylib         0x0000000193030fac thread_start + 0
+</code></pre>
+
+<p>Here is the second crash report: </p>
+
+<pre><code>Application Specific Information:
+com.Name.App failed to scene-create in time
+
+Elapsed total CPU time (seconds): 20.300 (user 20.300, system 0.000), 49% CPU 
+Elapsed application CPU time (seconds): 0.207, 1% CPU
+
+Thread 0 name:  Dispatch queue: com.apple.main-thread
+Thread 0:
+0   libsystem_kernel.dylib          0x0000000192f7ceb8 semaphore_wait_trap + 8
+1   libdispatch.dylib               0x0000000192e62d98 _dispatch_group_wait_slow + 244
+2   CloudDocs                       0x0000000188427818 -[BRXPCSyncProxy resultWithTimeout:] + 72
+3   CloudDocs                       0x0000000188418bc0 __BRIsProcessForcingUbiquity_block_invoke + 172
+4   libdispatch.dylib               0x0000000192e55368 _dispatch_client_callout + 12
+5   libdispatch.dylib               0x0000000192e56240 dispatch_once_f + 92
+6   CloudDocs                       0x0000000188418b0c BRIsProcessForcingUbiquity + 60
+7   Foundation                      0x0000000182b3ad6c ___BRIsCloudDocsUsed_block_invoke + 44
+8   libdispatch.dylib               0x0000000192e55368 _dispatch_client_callout + 12
+9   libdispatch.dylib               0x0000000192e56240 dispatch_once_f + 92
+10  Foundation                      0x0000000182b35044 ___NSFrameworkHandleForLibrarianSymbols_block_invoke + 96
+11  libdispatch.dylib               0x0000000192e55368 _dispatch_client_callout + 12
+12  libdispatch.dylib               0x0000000192e56240 dispatch_once_f + 92
+13  Foundation                      0x0000000182b3acec ___initializeLibrarianFunctions_block_invoke + 268
+14  libdispatch.dylib               0x0000000192e55368 _dispatch_client_callout + 12
+15  libdispatch.dylib               0x0000000192e56240 dispatch_once_f + 92
+16  Foundation                      0x0000000182b3a5b0 -[NSFileManager URLForUbiquityContainerIdentifier:] + 544
+17  Cloud-Fryser                    0x000000010003dc04 -[AppDelegate application:didFinishLaunchingWithOptions:] (AppDelegate.m:20)
+18  UIKit                           0x00000001864ce3cc -[UIApplication _handleDelegateCallbacksWithOptions:isSuspended:restoreState:] + 300
+19  UIKit                           0x00000001866e522c -[UIApplication _callInitializationDelegatesForMainScene:transitionContext:] + 2280
+20  UIKit                           0x00000001866e79ac -[UIApplication _runWithMainScene:transitionContext:completion:] + 1476
+21  UIKit                           0x00000001866e6044 -[UIApplication workspaceDidEndTransaction:] + 180
+22  FrontBoardServices              0x0000000189edd63c __31-[FBSSerialQueue performAsync:]_block_invoke + 24
+23  CoreFoundation                  0x0000000181c66120 __CFRUNLOOP_IS_CALLING_OUT_TO_A_BLOCK__ + 16
+24  CoreFoundation                  0x0000000181c65228 __CFRunLoopDoBlocks + 308
+25  CoreFoundation                  0x0000000181c6384c __CFRunLoopRun + 1752
+26  CoreFoundation                  0x0000000181b911f0 CFRunLoopRunSpecific + 392
+27  UIKit                           0x00000001864c7788 -[UIApplication _run] + 548
+28  UIKit                           0x00000001864c2780 UIApplicationMain + 1484
+29  Cloud-Fryser                    0x0000000100044878 main (main.m:16)
+30  libdyld.dylib                   0x0000000192e7ea04 start + 0
+
+Thread 1 name:  Dispatch queue: com.apple.libdispatch-manager
+Thread 1:
+0   libsystem_kernel.dylib          0x0000000192f7cc94 kevent64 + 8
+1   libdispatch.dylib               0x0000000192e6497c _dispatch_mgr_invoke + 272
+2   libdispatch.dylib               0x0000000192e573b0 _dispatch_mgr_thread + 48
+</code></pre>
+
+<p>If you need additional information, just let me know.</p> 
+
+Original Title:
+ App rejection - Crash report says: failed to scene-create in time (badf00d) What is wrong?
+
+**** Machine Generated Title (Prediction) ****:
+ ios app crashes when app is closed
+
+
+==============================================
+============== Example # 141 =================
+
+https://stackoverflow.com/questions/8001207/compile-time-typeid-without-rtti-with-gcc
+Question Body:
+ <p>Is there anyway to get compile-time <code>typeid</code> information from GCC with RTTI disabled? Under Visual Studio, a simple command like <code>const char* typeName = typeid(int).name();</code> will appropriately return "int", even if RTTI is disabled. Unfortunately, GCC can't do the same. When I try to call <code>typeid</code> without RTTI, my program crashes. I know disabling RTTI is not part of the standard, but is there anyway I can force GCC to do compile time resolution of known types?</p>
+
+<p>RTTI is disabled for performance reasons. I have no need for runtime RTTI.</p>
+
+<p>Edit:</p>
+
+<p>Here's what I ended up going with:</p>
+
+<pre><code>template&lt;typename T&gt; const char* TypeName(void);
+template&lt;typename T&gt; const char* TypeName(T type) { return TypeName&lt;T&gt;(); }
+
+#define REFLECTION_REGISTER_TYPE(type) \
+    template &lt;&gt; const char* TypeName&lt;type&gt;(void) { return #type; } 
+</code></pre>
+
+<p>It requires that <code>REFLECTION_REGISTER_TYPE</code> be called for every type that needs reflection info. But as long as it's called for every required type, calling <code>TypeName&lt;int&gt;</code> works perfectly. I also added the function <code>TypeName(T type)</code> which means you can do things like this: <code>int x = 0; printf(TypeName(x));</code> and it will print out "int". GCC should really be able to do this at compile time like VC++ can. </p> 
+
+Original Title:
+ Compile time typeid without RTTI with GCC
+
+**** Machine Generated Title (Prediction) ****:
+ compile time gcc and clang

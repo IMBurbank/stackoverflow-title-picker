@@ -3,6 +3,7 @@
 .vscode
 assets
 data
+deploy/*
 secrets
 workflow
 
