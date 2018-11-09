@@ -108,9 +108,6 @@ class Model(object):
         dec_bn = keras.layers.BatchNormalization(
             name='Decoder-Batchnorm-1')(dec_emb)
 
-        # TODO(https://github.com/kubeflow/examples/issues/196):
-        # With TF.Estimtor we hit https://github.com/keras-team/keras/issues/9761
-        # and the model won't train.
         decoder_gru = keras.layers.GRU(latent_dim,
                                        return_state=True,
                                        return_sequences=True,
