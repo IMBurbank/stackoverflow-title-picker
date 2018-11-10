@@ -98,6 +98,10 @@ class Trainer(object):
         num_samples: int or None
             Number of samples to use. Set to None to use entire dataset.
 
+        Returns
+        -------
+        none
+
         """
         def strip_list_html(t_list):
             return (
@@ -176,6 +180,10 @@ class Trainer(object):
         learning_rate: float
             Training learning rate.
 
+        Returns
+        -------
+        none
+
         """
         logging.info("starting")
 
@@ -223,10 +231,20 @@ class Trainer(object):
         """
         Train using Keras.
 
-        This is an alternative to using the TF.Estimator API.
-        TODO: Added support for using Keras to debug whether model
-        hitting issue:
-        https://github.com/keras-team/keras/issues/9761 only with TF.Estimator.
+        Parameters
+        ----------
+        output_model_h5: str
+            Output model save path
+        base_name: str
+            Model Logging and checkpoint base name
+        batch_size: int
+            Number of samples per batch to train
+        epochs: int
+            Number of cycles to train on the dataset
+
+        Returns
+        -------
+        none
 
         """
         logging.info("Using base name: %s", base_name)
@@ -250,6 +268,15 @@ class Trainer(object):
     def evaluate(self):
         """
         Generates predictions on holdout set and calculates BLEU Score.
+
+        Parameters
+        ----------
+        none
+
+        Returns
+        -------
+        blue_score: float
+            Corpus-bleu score for holdout set
 
         """
         inference = Inference(encoder_preprocessor=self.body_pp,

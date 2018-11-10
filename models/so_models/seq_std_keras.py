@@ -14,8 +14,14 @@ class Model(object):
 
         Parameters
         ----------
-        latent_dim: Latent dimension for embedding and hidden units
-        model_name: Name of model instance.
+        latent_dim: int
+            Latent dimension for embedding and hidden units
+        model_name: str
+            Name of model instance.
+
+        Returns
+        -------
+        none
 
         """
         self.latent_dim = latent_dim
@@ -27,21 +33,19 @@ class Model(object):
 
         Parameters
         ----------
-        fname: str
-            file name of ktext.proccessor object
+        doc_length: int
+            Number it samples in encoder input data
+        num_encoder_tokens: int
+            Number of tokens in preprocessor.        
 
         Returns
         -------
-        num_tokens : int
-            size of vocabulary loaded into ktext.processor
-        pp : ktext.processor
-            the processor you are trying to load
-
-        Typical Usage:
-        -------------
-        num_decoder_tokens, title_pp = load_text_processor(
-            fname='title_pp.dpkl')
-        num_encoder_tokens, body_pp = load_text_processor(fname='body_pp.dpkl')
+        encoder_inputs: keras layer
+            Encoder input keras layer
+        encoder_model: keras model
+            Encoder keras model
+        encoder_out: keras encoder output
+            Keras encoder output
 
         """
         self.doc_length = doc_length
@@ -77,22 +81,17 @@ class Model(object):
 
         Parameters
         ----------
-        fname: str
-            file name of ktext.proccessor object
+        encoder_out: keras encoder out
+            Number it samples in encoder input data
+        num_decoder_tokens: int
+            Number of decoder tokens in preprocessor.        
 
         Returns
         -------
-        num_tokens : int
-            size of vocabulary loaded into ktext.processor
-        pp : ktext.processor
-            the processor you are trying to load
-
-        Typical Usage:
-        -------------
-
-        num_decoder_tokens, title_pp = load_text_processor(
-            fname='title_pp.dpkl')
-        num_encoder_tokens, body_pp = load_text_processor(fname='body_pp.dpkl')
+        decoder_inputs: keras layer
+            Decoder input keras layer
+        decoder_out: keras decoder model
+            Keras decoder output
 
         """
         latent_dim = self.latent_dim
@@ -132,22 +131,18 @@ class Model(object):
 
         Parameters
         ----------
-        fname: str
-            file name of ktext.proccessor object
+        encoder_inputs: keras layer
+            Encoder input keras layer
+        decoder_inputs: keras layer
+            Decoder input keras layer
+        decoder_out: keras decoder model
+            Keras decoder output
+            Number of decoder tokens in preprocessor.        
 
         Returns
         -------
-        num_tokens : int
-            size of vocabulary loaded into ktext.processor
-        pp : ktext.processor
-            the processor you are trying to load
-
-        Typical Usage:
-        -------------
-
-        num_decoder_tokens, title_pp = load_text_processor(
-            fname='title_pp.dpkl')
-        num_encoder_tokens, body_pp = load_text_processor(fname='body_pp.dpkl')
+        encoder_decoder_model: keras model
+            Full keras encoder-decoder model
 
         """
         encoder_decoder_model = keras.Model([encoder_inputs, decoder_inputs],
