@@ -40,6 +40,18 @@ GCS_REGEX = re.compile("gs://([^/]*)(/.*)?")
 def split_gcs_uri(gcs_uri):
     """
     Split a GCS URI into bucket and path.
+    
+    Parameters
+    ----------
+    gcs_uri: str
+        GCS path
+
+    Returns
+    -------
+    bucket: str
+        Bucket URI
+    path: str
+        Data path in bucket
 
     """
     m = GCS_REGEX.match(gcs_uri)
@@ -50,16 +62,32 @@ def split_gcs_uri(gcs_uri):
     return bucket, path
 
 
-def is_gcs_path(gcs_uri):
-    return GCS_REGEX.match(gcs_uri)
+def is_gcs_path(path):
+    """
+    Check if string is a Google Cloud Storage path.
+    
+    Parameters
+    ----------
+    path: str
+        Input path to be checked
+
+    Returns
+    -------
+    GCS_REGEX.match: bool
+        Boolean value representing whether input is a GCS path
+
+    """
+    return GCS_REGEX.match(path)
 
 
 def process_input_data(input_data_path):
     """
     Process the input file.
+
     If its a GCS file we download it to a temporary local file. We do this
     because Keras text preprocessing doesn't work with GCS.
     If its a zip file we unpack it.
+
     Parameters
     ----------
     input_data_path: The input
@@ -114,6 +142,12 @@ def wait_for_preprocessing(preprocessed_file):
 
     Parameters
     ----------
+    preprocessed_file: str
+        Path to file containing preprocessed data
+
+    Returns
+    -------
+    none
 
     """
     # TODO: Why block waiting for the file?
