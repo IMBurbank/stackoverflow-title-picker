@@ -38,8 +38,7 @@ class Trainer(object):
                  title_keep_n=8000,
                  body_maxlen=120,
                  title_maxlen=12):
-        """
-        Construct the trainer.
+        """Construct the trainer.
 
         Parameters
         ----------
@@ -47,7 +46,6 @@ class Trainer(object):
             Module to instantiate model for training
         output_dir: str
             Directory where outputs should be written.
-
         """
         if not model_file:
             raise ValueError("model_file can't be None.")
@@ -86,8 +84,7 @@ class Trainer(object):
         self.title_pp = None
 
     def preprocess(self, data_glob, num_samples=None):
-        """
-        Preprocess the input.
+        """Preprocess the input.
 
         Trains preprocessors and splits the data into train and test sets.
 
@@ -101,7 +98,6 @@ class Trainer(object):
         Returns
         -------
         none
-
         """
         def strip_list_html(t_list):
             return (
@@ -172,8 +168,7 @@ class Trainer(object):
         np.save(self.preprocessed_bodies, train_body_vecs)
 
     def build_model(self, learning_rate):
-        """
-        Build a keras model.
+        """Build a keras model.
 
         Parameters
         ----------
@@ -183,7 +178,6 @@ class Trainer(object):
         Returns
         -------
         none
-
         """
         logging.info("starting")
 
@@ -228,8 +222,7 @@ class Trainer(object):
               base_name='model_def_keras',
               batch_size=1200,
               epochs=5):
-        """
-        Train using Keras.
+        """Train using Keras.
 
         Parameters
         ----------
@@ -245,7 +238,6 @@ class Trainer(object):
         Returns
         -------
         none
-
         """
         logging.info("Using base name: %s", base_name)
         csv_logger = CSVLogger('{:}.log'.format(base_name))
@@ -266,8 +258,7 @@ class Trainer(object):
         self.Model.save(output_model_h5)
 
     def evaluate(self):
-        """
-        Generates predictions on holdout set and calculates BLEU Score.
+        """Generates predictions on holdout set and calculates BLEU Score.
 
         Parameters
         ----------
@@ -277,7 +268,6 @@ class Trainer(object):
         -------
         blue_score: float
             Corpus-bleu score for holdout set
-
         """
         inference = Inference(encoder_preprocessor=self.body_pp,
                               decoder_preprocessor=self.title_pp,

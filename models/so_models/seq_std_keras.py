@@ -34,7 +34,7 @@ class Model(object):
         Parameters
         ----------
         doc_length: int
-            Number it samples in encoder input data
+            Standard document length of the encoder input after padding
         num_encoder_tokens: int
             Number of tokens in preprocessor.        
 

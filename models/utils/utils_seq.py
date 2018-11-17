@@ -23,8 +23,7 @@ from nltk.translate.bleu_score import corpus_bleu
 
 
 def load_text_processor(fname='title_pp.dpkl'):
-    """
-    Load preprocessors from disk.
+    """Load preprocessors from disk.
 
     Parameters
     ----------
@@ -42,7 +41,6 @@ def load_text_processor(fname='title_pp.dpkl'):
     -------------
     num_decoder_tokens, title_pp = load_text_processor(fname='title_pp.dpkl')
     num_encoder_tokens, body_pp = load_text_processor(fname='body_pp.dpkl')
-
     """
     # Load files from disk
     with open(fname, 'rb') as f:
@@ -54,8 +52,7 @@ def load_text_processor(fname='title_pp.dpkl'):
 
 
 def load_decoder_inputs(decoder_np_vecs='train_title_vecs.npy'):
-    """
-    Load decoder inputs.
+    """Load decoder inputs.
 
     Parameters
     ----------
@@ -71,7 +68,6 @@ def load_decoder_inputs(decoder_np_vecs='train_title_vecs.npy'):
     decoder_target_data : numpy.array
         The data that the decoder data is trained to generate (question title).
         Calculated by sliding `decoder_np_vecs` one position forward.
-
     """
     vectorized_title = np.load(decoder_np_vecs)
     # For Decoder Input, you don't need the last word as that is only for prediction
@@ -87,8 +83,7 @@ def load_decoder_inputs(decoder_np_vecs='train_title_vecs.npy'):
 
 
 def load_encoder_inputs(encoder_np_vecs='train_body_vecs.npy'):
-    """
-    Load variables & data that are inputs to encoder.
+    """Load variables & data that are inputs to encoder.
 
     Parameters
     ----------
@@ -102,7 +97,6 @@ def load_encoder_inputs(encoder_np_vecs='train_body_vecs.npy'):
     doc_length : int
         The standard document length of the input for the encoder after padding
         the shape of this array will be (num_examples, doc_length)
-
     """
     vectorized_body = np.load(encoder_np_vecs)
     # Encoder input is simply the body of the question text
@@ -146,8 +140,7 @@ def plot_model_training_history(history_object):
 
 
 def extract_encoder_model(model):
-    """
-    Extract the encoder from the original Sequence to Sequence Model.
+    """Extract the encoder from the original Sequence to Sequence Model.
 
     Returns a keras model object that has one input (body of question) and one
     output (encoding of question, which is the last hidden state).
@@ -159,15 +152,13 @@ def extract_encoder_model(model):
     Returns:
     -----
     keras model object
-
     """
     encoder_model = model.get_layer('Encoder-Model')
     return encoder_model
 
 
 def extract_decoder_model(model):
-    """
-    Extract the decoder from the original model.
+    """Extract the decoder from the original model.
 
     Parameters
     ----------
@@ -193,11 +184,7 @@ def extract_decoder_model(model):
     Must extract relevant layers and reconstruct part of the computation graph
     to allow for different inputs as we are not going to use teacher forcing at
     inference time.
-
     """
-    # the latent dimension is the same throughout the architecture so we
-    # are going to cheat and grab the latent dimension of the embedding
-    # because that is the same as what is output from the decoder
     latent_dim = model.get_layer('Decoder-Word-Embedding').output_shape[-1]
 
     # Reconstruct the input into the decoder
@@ -205,24 +192,9 @@ def extract_decoder_model(model):
     dec_emb = model.get_layer('Decoder-Word-Embedding')(decoder_inputs)
     dec_bn = model.get_layer('Decoder-Batchnorm-1')(dec_emb)
 
-    # Instead of setting the intial state from the encoder and forgetting
-    # about it, during inference we are not doing teacher forcing, so we
-    # will have to have a feedback loop from predictions back into the GRU,
-    # thus we define this input layer for the state so we can add this
-    # capability
     gru_inference_state_input = Input(shape=(latent_dim,),
                                       name='hidden_state_input')
 
-    # we need to reuse the weights that is why we are getting this
-    # If you inspect the decoder GRU that we created for training,
-    # it will take as input 2 tensors ->
-    # 1) is the embedding layer output for the teacher forcing
-    #   which will now be the last step's prediction, and will be _start_
-    #   on the first time step
-    # 2) is the state
-    #   which we will initialize with the encoder on the first time step,
-    #   but then grab the state after the first prediction and feed that
-    #   back in again.)
     gru_out, gru_state_out = model.get_layer('Decoder-GRU')(
         [dec_bn, gru_inference_state_input])
 
@@ -236,13 +208,7 @@ def extract_decoder_model(model):
 
 
 class Inference(object):
-    """
-    Use the model to infer.
-
-    Parameters
-    ----------
-
-    """
+    """Use the model to make and evaluate predictions."""
 
     # pylint: disable=too-many-instance-attributes
 
@@ -263,8 +229,7 @@ class Inference(object):
     def generate_title(self,
                        raw_input_text,
                        title_maxlen=None):
-        """
-        Use the model to generate a title given the body of an question.
+        """Use the model to generate a title given the body of an question.
 
         Parameters
         ----------
@@ -273,6 +238,11 @@ class Inference(object):
         title_maxlen: int (optional)
             The maximum length of the title the model will generate
 
+        Returns
+        -------
+        original_body_encoding: encoder embedding
+        decoded_sentence str
+            Predicted title.
         """
         if title_maxlen is None:
             title_maxlen = self.default_title_maxlen
@@ -319,8 +289,7 @@ class Inference(object):
                       title_text,
                       url,
                       threshold):
-        """
-        Prints an example of the model's prediction for manual inspection.
+        """Prints an example of the model's prediction for manual inspection.
         """
         if i:
             print('\n\n==============================================')
@@ -359,8 +328,7 @@ class Inference(object):
                                n,
                                question_df,
                                threshold=1):
-        """
-        Pick n random Questions and display predictions.
+        """Pick n random Questions and display predictions.
 
         Parameters
         ----------
@@ -374,7 +342,6 @@ class Inference(object):
         Returns:
         --------
         None
-            Prints the original question body and the model's prediction.
         """
         # Extract body and title from DF
         body_text = question_df.body.tolist()
@@ -390,8 +357,7 @@ class Inference(object):
                                threshold=threshold)
 
     def prepare_recommender(self, vectorized_array, original_df):
-        """
-        Use the annoy library to build recommender
+        """Use the annoy library to build recommender
 
         Parameters
         ----------
@@ -426,8 +392,7 @@ class Inference(object):
         self.nn = annoyobj
 
     def evaluate_model(self, holdout_bodies, holdout_titles):
-        """
-        Method for calculating BLEU Score.
+        """Method for calculating BLEU Score.
 
         Parameters
         ----------
@@ -441,7 +406,6 @@ class Inference(object):
         -------
         bleu : float
             The BLEU Score
-
         """
         actual, predicted = list(), list()
         assert len(holdout_bodies) == len(holdout_titles)

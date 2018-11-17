@@ -217,7 +217,11 @@ ks apply default -c title-picker-model-serving
 ```bash
 kubectl port-forward $(kubectl get pods -n ${NAMESPACE} -l service=ambassador -o jsonpath='{.items[0].metadata.name}') -n ${NAMESPACE} 8080:80
 
+#Using Kubernetes
 curl -X POST -H 'Content-Type: application/json' -d '{"data":{"ndarray":[["How to add a new property to disable detection of image stream files those ended with -is.yml from target directory. expected behaviour by default cube should not process image stream files if user does not set it. current behaviour cube always try to execute -is.yml files which can cause some problems in most of cases, for example if you are using kuberentes instead of openshift or if you use together fabric8 maven plugin with cube"]]}}' http://localhost:8080/seldon/title-picker/api/v0.1/predictions
+
+# Using flask
+curl -X POST -H 'Content-Type: application/json' -d '{"data":{"ndarray":[["How to add a new property to disable detection of image stream files those ended with -is.yml from target directory. expected behaviour by default cube should not process image stream files if user does not set it. current behaviour cube always try to execute -is.yml files which can cause some problems in most of cases, for example if you are using kuberentes instead of openshift or if you use together fabric8 maven plugin with cube"]]}}' http://localhost:5000/predict
 ```
 
 

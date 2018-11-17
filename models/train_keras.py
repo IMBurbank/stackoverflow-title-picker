@@ -38,8 +38,7 @@ GCS_REGEX = re.compile("gs://([^/]*)(/.*)?")
 
 
 def split_gcs_uri(gcs_uri):
-    """
-    Split a GCS URI into bucket and path.
+    """Split a GCS URI into bucket and path.
     
     Parameters
     ----------
@@ -52,7 +51,6 @@ def split_gcs_uri(gcs_uri):
         Bucket URI
     path: str
         Data path in bucket
-
     """
     m = GCS_REGEX.match(gcs_uri)
     bucket = m.group(1)
@@ -63,8 +61,7 @@ def split_gcs_uri(gcs_uri):
 
 
 def is_gcs_path(path):
-    """
-    Check if string is a Google Cloud Storage path.
+    """Check if string is a Google Cloud Storage path.
     
     Parameters
     ----------
@@ -75,14 +72,12 @@ def is_gcs_path(path):
     -------
     GCS_REGEX.match: bool
         Boolean value representing whether input is a GCS path
-
     """
     return GCS_REGEX.match(path)
 
 
 def process_input_data(input_data_path):
-    """
-    Process the input file.
+    """Process the input file.
 
     If its a GCS file we download it to a temporary local file. We do this
     because Keras text preprocessing doesn't work with GCS.
@@ -90,12 +85,13 @@ def process_input_data(input_data_path):
 
     Parameters
     ----------
-    input_data_path: The input
+    input_data_path: str
+        The input
 
     Returns
     -------
-    input_data_glob: The local csv file to process
-
+    input_data_glob: glob
+        The local csv file to process
     """
     if os.path.isdir(input_data_path):
         input_data_glob = glob.glob(input_data_path + "/*.csv")
@@ -134,8 +130,7 @@ def process_input_data(input_data_path):
 
 
 def wait_for_preprocessing(preprocessed_file):
-    """
-    Wait for preprocessing.
+    """Wait for preprocessing.
 
     In the case of distributed training the workers need to wait for the
     preprocessing to be completed. But only the master runs preprocessing.
@@ -148,7 +143,6 @@ def wait_for_preprocessing(preprocessed_file):
     Returns
     -------
     none
-
     """
     # TODO: Why block waiting for the file?
     # I think this is because only the master produces the npy

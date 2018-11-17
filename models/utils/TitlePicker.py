@@ -20,12 +20,8 @@ from utils.utils_seq import Inference
 
 
 class TitlePicker(object):
-    """
-    TitlePicker
-
-    """
-
     def __init__(self):
+    """Class for TitlePicker predictions."""
         body_pp_file = os.getenv('BODY_PP_FILE', 'body_pp.dpkl')
         print('body_pp file {0}'.format(body_pp_file))
         with open(body_pp_file, 'rb') as body_file:
@@ -45,7 +41,7 @@ class TitlePicker(object):
     def predict(self,
                 input_text,
                 feature_names): # pylint: disable=unused-argument
-
+        """Predict title"""
         return np.asarray(
             [[self.model.generate_title(body[0])[1]]
              for body in input_text])
